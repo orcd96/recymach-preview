@@ -383,6 +383,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
       <button class="cat-tab" data-filter="triplay"><span data-es>Triplay Plástico</span><span data-en>Plastic Plywood</span><span data-pt>Compensado Plástico</span></button>
       <button class="cat-tab" data-filter="prensas"><span data-es>Prensas</span><span data-en>Presses</span><span data-pt>Prensas</span></button>
       <button class="cat-tab" data-filter="sopladoras"><span data-es>Sopladoras</span><span data-en>Blow Molders</span><span data-pt>Sopradoras</span></button>
+      <button class="cat-tab" data-filter="destalonadora"><span data-es>Destalonadora</span><span data-en>Debeader</span><span data-pt>Destalonadora</span></button>
       <button class="cat-tab" data-filter="auxiliares"><span data-es>Auxiliares</span><span data-en>Auxiliary</span><span data-pt>Auxiliares</span></button>
       <button class="cat-tab" data-filter="lineas"><span data-es>Líneas Completas</span><span data-en>Full Lines</span><span data-pt>Linhas Completas</span></button>
     </div>
@@ -547,8 +548,8 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         </div>
       </div>
 
-      <div class="product-card" data-cat="auxiliares">
-        <div class="carousel" id="car-aux" data-current="0">
+      <div class="product-card" data-cat="destalonadora">
+        <div class="carousel" id="car-destal" data-current="0">
           <div class="carousel-track">
             <img src="img/destalonadora_1.jpg" alt="Destalonadora RecyMach vista 1" loading="lazy">
             <img src="img/destalonadora_2.jpg" alt="Destalonadora RecyMach vista 2" loading="lazy">
@@ -556,25 +557,42 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
             <img src="img/destalonadora_4.jpg" alt="Destalonadora RecyMach vista 4" loading="lazy">
             <img src="img/destalonadora_5.jpg" alt="Destalonadora RecyMach vista 5" loading="lazy">
           </div>
-          <button class="car-btn car-prev" onclick="carMove('car-aux',-1)" aria-label="Anterior">&#8249;</button>
-          <button class="car-btn car-next" onclick="carMove('car-aux', 1)" aria-label="Siguiente">&#8250;</button>
+          <button class="car-btn car-prev" onclick="carMove('car-destal',-1)" aria-label="Anterior">&#8249;</button>
+          <button class="car-btn car-next" onclick="carMove('car-destal', 1)" aria-label="Siguiente">&#8250;</button>
           <div class="car-dots">
-            <span class="car-dot active" onclick="carGo('car-aux',0)"></span>
-            <span class="car-dot" onclick="carGo('car-aux',1)"></span>
-            <span class="car-dot" onclick="carGo('car-aux',2)"></span>
-            <span class="car-dot" onclick="carGo('car-aux',3)"></span>
-            <span class="car-dot" onclick="carGo('car-aux',4)"></span>
+            <span class="car-dot active" onclick="carGo('car-destal',0)"></span>
+            <span class="car-dot" onclick="carGo('car-destal',1)"></span>
+            <span class="car-dot" onclick="carGo('car-destal',2)"></span>
+            <span class="car-dot" onclick="carGo('car-destal',3)"></span>
+            <span class="car-dot" onclick="carGo('car-destal',4)"></span>
           </div>
           <div class="car-hint"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> <span data-es>5 fotos · desliza o usa las flechas</span><span data-en>5 photos · swipe or use arrows</span><span data-pt>5 fotos · deslize ou use as setas</span></div>
         </div>
         <div class="product-body">
-          <h3><span data-es>Equipo Auxiliar</span><span data-en>Auxiliary Equipment</span><span data-pt>Equipamento Auxiliar</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">1 – 50 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>9+ equipos</span><span data-en>9+ units</span><span data-pt>9+ unidades</span></span></div></div>
+          <h3><span data-es>Destalonadora</span><span data-en>Tire Debeader</span><span data-pt>Destalonadora</span></h3>
+          <div class="range-bar">
+            <div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">3 – 10 HP</span></div>
+            <div class="range-stat"><span class="range-label"><span data-es>Aplicación</span><span data-en>Application</span><span data-pt>Aplicação</span></span><span class="range-value"><span data-es>Auto y camioneta</span><span data-en>Car &amp; truck tires</span><span data-pt>Auto e caminhonete</span></span></div>
+          </div>
           <ul class="product-specs">
-<li><span data-es>Destalonadora y Desetiquetadora para prelavado de material</span><span data-en>Debander and delabeler for pre-washing material</span><span data-pt>Deslonchadeira e desrotuladora para pré-lavagem</span></li>
+<li><span data-es>Separa el talón de acero de la llanta antes del triturado</span><span data-en>Separates steel bead from tire prior to shredding</span><span data-pt>Separa o talão de aço do pneu antes da trituração</span></li>
+<li><span data-es>Aumenta la vida útil de las cuchillas del triturador</span><span data-en>Extends shredder blade life significantly</span><span data-pt>Aumenta a vida útil das facas do triturador</span></li>
+<li><span data-es>Pre-tratamiento indispensable en líneas de reciclaje de llanta</span><span data-en>Essential pre-treatment in tire recycling lines</span><span data-pt>Pré-tratamento indispensável em linhas de reciclagem de pneus</span></li>
+<li><span data-es>Operación sencilla — un operador por turno</span><span data-en>Simple operation — one operator per shift</span><span data-pt>Operação simples — um operador por turno</span></li>
+          </ul>
+          <button class="product-cta" onclick="openModal('Destalonadora')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="auxiliares">
+        <div class="product-img"><img src="img/equipo_auxiliar.jpg" alt="Equipo Auxiliar RecyMach" loading="lazy"></div>
+        <div class="product-body">
+          <h3><span data-es>Equipo Auxiliar</span><span data-en>Auxiliary Equipment</span><span data-pt>Equipamento Auxiliar</span></h3>
+          <ul class="product-specs">
 <li><span data-es>Bandas de selección y alimentación a medida</span><span data-en>Selection and feeding conveyors to order</span><span data-pt>Esteiras de seleção e alimentação sob medida</span></li>
 <li><span data-es>Centrífuga, Ponchadora y Afiladora de Cuchillas</span><span data-en>Centrifuge, Perforator and Blade Sharpener</span><span data-pt>Centrífuga, Perfuradora e Afiadora de Facas</span></li>
 <li><span data-es>Extractores neumáticos y Silos de almacenaje</span><span data-en>Pneumatic extractors and storage silos</span><span data-pt>Extratores pneumáticos e silos de armazenagem</span></li>
+<li><span data-es>Desetiquetadora para prelavado de material</span><span data-en>Delabeler for material pre-washing</span><span data-pt>Desrotuladora para pré-lavagem de material</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Equipo Auxiliar')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
