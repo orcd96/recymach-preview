@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicia Tu Negocio de Reciclaje — RecyMach Modelo B</title>
+<meta name="description" content="Compra tu primera máquina de reciclaje y empieza tu propio negocio. Desde $75,000 MXN. Capacitación completa y asesoría de RecyMach.">
+<!-- GA4: paste your gtag here -->
+<!-- META PIXEL: paste your pixel here -->
+<style>
+:root{
+  --dark:#0d0d0d;--dark2:#141414;--dark3:#1a1a1a;
+  --g:#2d8a4e;--g2:#1f6b39;--g3:#3aaf63;
+  --blue:#1a5fa8;--blue2:#124a87;--blue3:#4a9eff;
+  --text:#ffffff;--text2:#b0b0b0;--border:rgba(255,255,255,0.08);
+  --blue-border:rgba(26,95,168,0.3);--blue-bg:rgba(26,95,168,0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:hidden;}
+body.es [data-en],body.es [data-pt],body.en [data-es],body.en [data-pt],body.pt [data-es],body.pt [data-en]{display:none!important;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,13,13,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo img{height:42px;width:auto;display:block;}
+.nav-links{display:flex;gap:1.5rem;align-items:center;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--text);}
+.nav-right{display:flex;align-items:center;gap:1.2rem;}
+.lang-btns{display:flex;gap:0.4rem;}
+.lang-btn{background:transparent;border:1px solid var(--border);color:var(--text2);padding:0.3rem 0.6rem;border-radius:6px;cursor:pointer;font-size:0.8rem;display:flex;align-items:center;gap:0.3rem;transition:all 0.2s;}
+.lang-btn:hover,.lang-btn.active{border-color:var(--blue);color:var(--text);background:rgba(26,95,168,0.12);}
+.lang-btn svg{width:18px;height:12px;border-radius:2px;}
+.nav-cta{background:var(--blue);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:background 0.2s;white-space:nowrap;border:none;cursor:pointer;font-family:inherit;}
+.nav-cta:hover{background:var(--blue2);}
+
+/* HERO */
+.hero{padding:9rem 2rem 5rem;background:linear-gradient(160deg,#060f1a 0%,#0d0d0d 50%,#060e18 100%);position:relative;overflow:hidden;text-align:center;}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(circle,rgba(26,95,168,0.1) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{max-width:840px;margin:0 auto;position:relative;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(26,95,168,0.12);border:1px solid var(--blue-border);color:var(--blue3);padding:0.4rem 1rem;border-radius:100px;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem;}
+.hero h1 em{color:var(--blue3);font-style:normal;}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text2);margin-bottom:3rem;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero-metrics{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.metric{display:flex;flex-direction:column;align-items:center;padding:1.25rem 1.75rem;background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:14px;}
+.metric strong{font-size:1.8rem;font-weight:900;color:var(--blue3);line-height:1;}
+.metric span{font-size:0.82rem;color:var(--text2);margin-top:0.3rem;text-align:center;}
+.btn-blue{display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;background:var(--blue);color:#fff;padding:0.9rem 2.2rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all 0.2s;}
+.btn-blue:hover{background:var(--blue2);transform:translateY(-2px);}
+.btn-blue svg{width:20px;height:20px;}
+
+/* WHAT'S INCLUDED */
+.includes-section{padding:5rem 2rem;background:var(--dark2);}
+.includes-inner{max-width:1100px;margin:0 auto;}
+.section-header{text-align:center;margin-bottom:3.5rem;}
+.section-header h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:0.75rem;}
+.section-header p{color:var(--text2);font-size:1rem;max-width:560px;margin:0 auto;}
+.includes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+.include-card{background:var(--dark3);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:border-color 0.3s,transform 0.3s;}
+.include-card:hover{border-color:rgba(26,95,168,0.4);transform:translateY(-4px);}
+.include-icon{width:52px;height:52px;background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;}
+.include-icon svg{width:24px;height:24px;color:var(--blue3);}
+.include-card h4{font-size:1rem;font-weight:700;margin-bottom:0.5rem;}
+.include-card p{font-size:0.85rem;color:var(--text2);line-height:1.6;}
+
+/* OPPORTUNITY */
+.opportunity-section{padding:5rem 2rem;background:var(--dark);position:relative;overflow:hidden;}
+.opportunity-section::before{content:'';position:absolute;right:-200px;top:50%;transform:translateY(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(26,95,168,0.06) 0%,transparent 70%);pointer-events:none;}
+.opportunity-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.opportunity-img img{width:100%;border-radius:16px;height:380px;object-fit:cover;}
+.opportunity-text .hero-badge{margin-bottom:1.25rem;}
+.opportunity-text h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:1rem;line-height:1.2;}
+.opportunity-text h2 em{color:var(--blue3);font-style:normal;}
+.opportunity-text p{color:var(--text2);font-size:0.95rem;line-height:1.7;margin-bottom:1.25rem;}
+.stat-row{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.75rem;}
+.stat-item strong{display:block;font-size:1.8rem;font-weight:900;color:var(--blue3);line-height:1;}
+.stat-item span{font-size:0.82rem;color:var(--text2);}
+
+/* STEPS */
+.steps-section{padding:5rem 2rem;background:var(--dark2);}
+.steps-inner{max-width:960px;margin:0 auto;}
+.steps-list{margin-top:3rem;display:flex;flex-direction:column;gap:1.5rem;}
+.step-item{display:grid;grid-template-columns:72px 1fr;gap:1.75rem;align-items:start;background:var(--dark3);border:1px solid var(--border);border-radius:14px;padding:1.75rem;transition:border-color 0.3s;}
+.step-item:hover{border-color:rgba(26,95,168,0.4);}
+.step-num{width:52px;height:52px;background:var(--blue-bg);border:2px solid var(--blue-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;color:var(--blue3);flex-shrink:0;}
+.step-content h4{font-size:1.05rem;font-weight:700;margin-bottom:0.4rem;}
+.step-content p{font-size:0.9rem;color:var(--text2);line-height:1.6;}
+
+/* MACHINES FOR BEGINNERS */
+.machines-section{padding:5rem 2rem;background:var(--dark);}
+.machines-inner{max-width:1100px;margin:0 auto;}
+.machines-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.machine-card{background:var(--dark2);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.3s,transform 0.3s;}
+.machine-card:hover{border-color:rgba(26,95,168,0.4);transform:translateY(-4px);}
+.machine-img{height:180px;overflow:hidden;}
+.machine-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+.machine-card:hover .machine-img img{transform:scale(1.05);}
+.machine-body{padding:1.25rem;}
+.machine-body h4{font-size:1rem;font-weight:700;margin-bottom:0.5rem;}
+.machine-body p{font-size:0.85rem;color:var(--text2);line-height:1.6;margin-bottom:1rem;}
+.machine-tag{display:inline-flex;align-items:center;gap:0.35rem;background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue3);padding:0.25rem 0.65rem;border-radius:100px;font-size:0.75rem;font-weight:700;}
+
+/* FAQ */
+.faq-section{padding:5rem 2rem;background:var(--dark2);}
+.faq-inner{max-width:760px;margin:0 auto;}
+.faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:1rem;}
+.faq-item{background:var(--dark3);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.faq-q{width:100%;background:transparent;border:none;color:var(--text);padding:1.25rem 1.5rem;text-align:left;font-size:0.95rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:inherit;}
+.faq-q svg{width:18px;height:18px;flex-shrink:0;color:var(--blue3);transition:transform 0.25s;}
+.faq-item.open .faq-q svg{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+.faq-a-inner{padding:0 1.5rem 1.25rem;color:var(--text2);font-size:0.9rem;line-height:1.7;}
+.faq-item.open .faq-a{max-height:400px;}
+
+/* CTA BOTTOM */
+.cta-section{padding:5rem 2rem;background:linear-gradient(135deg,#060f1a 0%,#0d0d0d 60%,#070d18 100%);border-top:1px solid var(--blue-border);}
+.cta-inner{max-width:700px;margin:0 auto;text-align:center;}
+.cta-inner h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;margin-bottom:1rem;}
+.cta-inner p{color:var(--text2);font-size:1.05rem;margin-bottom:2.5rem;}
+.cta-inner em{color:var(--blue3);font-style:normal;}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(6px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.25s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:var(--dark2);border:1px solid var(--blue-border);border-radius:20px;padding:2.5rem;max-width:540px;width:100%;max-height:90vh;overflow-y:auto;transform:translateY(20px);transition:transform 0.25s;}
+.modal-overlay.open .modal{transform:translateY(0);}
+.modal-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.75rem;gap:1rem;}
+.modal-header h3{font-size:1.3rem;font-weight:700;line-height:1.3;}
+.modal-close{background:transparent;border:1px solid var(--border);color:var(--text2);width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;transition:all 0.2s;}
+.modal-close:hover{border-color:var(--text);color:var(--text);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:0.82rem;font-weight:600;color:var(--text2);margin-bottom:0.4rem;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--dark3);border:1px solid var(--border);color:var(--text);padding:0.7rem 0.9rem;border-radius:8px;font-size:0.92rem;transition:border-color 0.2s;font-family:inherit;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blue);}
+.form-group select option{background:var(--dark3);}
+.form-group textarea{resize:vertical;min-height:80px;}
+.hp-field{display:none!important;}
+.form-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:0.9rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;transition:background 0.2s;margin-top:0.5rem;display:flex;align-items:center;justify-content:center;gap:0.6rem;}
+.form-submit:hover{background:var(--blue2);}
+.form-note{text-align:center;font-size:0.8rem;color:var(--text2);margin-top:0.75rem;}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+.footer-brand .footer-logo img{height:38px;margin-bottom:1rem;}
+.footer-brand p{color:var(--text2);font-size:0.88rem;line-height:1.7;max-width:260px;}
+.footer-col h4{font-size:0.82rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);margin-bottom:1rem;}
+.footer-col a{display:block;color:var(--text2);text-decoration:none;font-size:0.88rem;margin-bottom:0.5rem;transition:color 0.2s;}
+.footer-col a:hover{color:var(--text);}
+.footer-contact a{display:flex;align-items:center;gap:0.5rem;color:var(--text2);text-decoration:none;font-size:0.88rem;margin-bottom:0.6rem;transition:color 0.2s;}
+.footer-contact a:hover{color:var(--text);}
+.footer-contact svg{width:15px;height:15px;flex-shrink:0;color:var(--g3);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{color:var(--text2);font-size:0.8rem;}
+.footer-badges{display:flex;gap:1rem;align-items:center;}
+.footer-badges img{height:28px;width:auto;opacity:0.75;}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);text-decoration:none;animation:waPulse 2.5s infinite;}
+.wa-float svg{width:30px;height:30px;color:#fff;}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 16px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.3);}50%{box-shadow:0 4px 16px rgba(37,211,102,0.4),0 0 0 12px rgba(37,211,102,0);}}
+.wa-float:hover{background:#1db954;transform:scale(1.08);}
+
+@media(max-width:960px){
+  .includes-grid{grid-template-columns:repeat(2,1fr);}
+  .opportunity-inner{grid-template-columns:1fr;}
+  .machines-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  nav{padding:0 1rem;}
+  .nav-links{display:none;}
+  .includes-grid{grid-template-columns:1fr 1fr;}
+  .machines-grid{grid-template-columns:1fr;}
+  .step-item{grid-template-columns:52px 1fr;gap:1rem;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero-metrics{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body class="es">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/recymach_logo.svg" alt="RecyMach">
+    </a>
+    <div class="nav-links">
+      <a href="maquinaria.html" data-es>Maquinaria</a>
+      <a href="maquinaria.html" data-en>Machinery</a>
+      <a href="maquinaria.html" data-pt>Maquinário</a>
+      <a href="invertir.html" data-es>Invertir</a>
+      <a href="invertir.html" data-en>Invest</a>
+      <a href="invertir.html" data-pt>Investir</a>
+      <a href="mi-negocio.html" class="active" data-es>Mi Negocio</a>
+      <a href="mi-negocio.html" class="active" data-en>My Business</a>
+      <a href="mi-negocio.html" class="active" data-pt>Meu Negócio</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-btns">
+        <button class="lang-btn" onclick="setLang('es')" id="btn-es">
+          <svg viewBox="0 0 900 600"><rect width="300" height="600" fill="#006847"/><rect x="300" width="300" height="600" fill="#fff"/><rect x="600" width="300" height="600" fill="#ce1126"/></svg>
+          <span>ES</span>
+        </button>
+        <button class="lang-btn" onclick="setLang('en')" id="btn-en">
+          <svg viewBox="0 0 900 600"><rect width="900" height="600" fill="#B22234"/><rect y="46" width="900" height="46" fill="#fff"/><rect y="138" width="900" height="46" fill="#fff"/><rect y="230" width="900" height="46" fill="#fff"/><rect y="323" width="900" height="46" fill="#fff"/><rect y="415" width="900" height="46" fill="#fff"/><rect y="508" width="900" height="46" fill="#fff"/><rect width="360" height="323" fill="#3C3B6E"/></svg>
+          <span>EN</span>
+        </button>
+        <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">
+          <svg viewBox="0 0 900 600"><rect width="900" height="600" fill="#009C3B"/><polygon points="450,50 850,300 450,550 50,300" fill="#FFDF00"/><circle cx="450" cy="300" r="120" fill="#002776"/></svg>
+          <span>PT</span>
+        </button>
+      </div>
+      <button class="nav-cta" onclick="openModal()">
+        <span data-es>Iniciar Negocio</span>
+        <span data-en>Start Business</span>
+        <span data-pt>Iniciar Negócio</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M21.18 8.02c-1-2.3-2.85-4.17-5.18-5.18"/></svg>
+      <span data-es>Modelo B — Tu Propio Negocio</span>
+      <span data-en>Model B — Your Own Business</span>
+      <span data-pt>Modelo B — Seu Próprio Negócio</span>
+    </div>
+    <h1>
+      <span data-es>Inicia Tu Propio <em>Negocio de Reciclaje</em></span>
+      <span data-en>Start Your Own <em>Recycling Business</em></span>
+      <span data-pt>Inicie Seu Próprio <em>Negócio de Reciclagem</em></span>
+    </h1>
+    <p class="hero-sub">
+      <span data-es>Compra tu primera máquina, recibe capacitación completa y el apoyo de RecyMach para arrancar tu operación. Empieza a generar ingresos reciclando plástico desde el primer mes.</span>
+      <span data-en>Buy your first machine, receive full training, and RecyMach's support to launch your operation. Start generating income recycling plastic from the first month.</span>
+      <span data-pt>Compre sua primeira máquina, receba treinamento completo e o apoio da RecyMach para iniciar sua operação. Comece a gerar renda reciclando plástico desde o primeiro mês.</span>
+    </p>
+    <div class="hero-metrics">
+      <div class="metric">
+        <strong>$75k</strong>
+        <span data-es>Desde MXN (~$5k USD)</span>
+        <span data-en>From MXN (~$5k USD)</span>
+        <span data-pt>A partir de MXN (~$5k USD)</span>
+      </div>
+      <div class="metric">
+        <strong>Mes 1</strong>
+        <span data-es>Empieza a generar ingresos</span>
+        <span data-en>Start generating income</span>
+        <span data-pt>Começa a gerar renda</span>
+      </div>
+      <div class="metric">
+        <strong>100%</strong>
+        <span data-es>Tuya — sin franquicia</span>
+        <span data-en>Yours — no franchise</span>
+        <span data-pt>Sua — sem franquia</span>
+      </div>
+    </div>
+    <button class="btn-blue" onclick="openModal()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      <span data-es>Agendar Consulta Gratuita</span>
+      <span data-en>Schedule Free Consultation</span>
+      <span data-pt>Agendar Consulta Gratuita</span>
+    </button>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="includes-section">
+  <div class="includes-inner">
+    <div class="section-header">
+      <h2>
+        <span data-es>¿Qué Incluye el Modelo B?</span>
+        <span data-en>What Does Model B Include?</span>
+        <span data-pt>O Que Inclui o Modelo B?</span>
+      </h2>
+      <p>
+        <span data-es>No vendes solo la máquina — te ayudamos a arrancar tu negocio.</span>
+        <span data-en>We don't just sell you a machine — we help you launch your business.</span>
+        <span data-pt>Não vendemos apenas a máquina — ajudamos você a lançar seu negócio.</span>
+      </p>
+    </div>
+    <div class="includes-grid">
+      <div class="include-card">
+        <div class="include-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><circle cx="12" cy="15" r="2"/></svg>
+        </div>
+        <h4 data-es>Tu Máquina Industrial</h4>
+        <h4 data-en>Your Industrial Machine</h4>
+        <h4 data-pt>Sua Máquina Industrial</h4>
+        <p>
+          <span data-es>Fabricada a tu medida, diseñada para el plástico que quieres procesar. Entrega en 30–60 días.</span>
+          <span data-en>Custom built, designed for the plastic you want to process. 30–60 day delivery.</span>
+          <span data-pt>Fabricada sob medida, projetada para o plástico que você quer processar. Entrega em 30–60 dias.</span>
+        </p>
+      </div>
+      <div class="include-card">
+        <div class="include-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h4 data-es>Capacitación Completa</h4>
+        <h4 data-en>Full Training</h4>
+        <h4 data-pt>Treinamento Completo</h4>
+        <p>
+          <span data-es>Te enseñamos a operar, mantener y optimizar tu máquina. Presencial o remoto según tu ubicación.</span>
+          <span data-en>We teach you to operate, maintain and optimize your machine. In-person or remote based on your location.</span>
+          <span data-pt>Ensinamos a operar, manter e otimizar sua máquina. Presencial ou remoto conforme sua localização.</span>
+        </p>
+      </div>
+      <div class="include-card">
+        <div class="include-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4 data-es>Asesoría de Negocio</h4>
+        <h4 data-en>Business Guidance</h4>
+        <h4 data-pt>Orientação de Negócios</h4>
+        <p>
+          <span data-es>Qué plástico comprar, a quién vender, cómo fijar precios. 30+ años de experiencia en el sector.</span>
+          <span data-en>What plastic to buy, who to sell to, how to price. 30+ years of sector experience.</span>
+          <span data-pt>Que plástico comprar, para quem vender, como precificar. 30+ anos de experiência no setor.</span>
+        </p>
+      </div>
+      <div class="include-card">
+        <div class="include-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4 data-es>Soporte RecyMach</h4>
+        <h4 data-en>RecyMach Support</h4>
+        <h4 data-pt>Suporte RecyMach</h4>
+        <p>
+          <span data-es>Acceso directo al equipo de ingenieros para dudas técnicas y de operación después de la compra.</span>
+          <span data-en>Direct access to the engineering team for technical and operational questions after purchase.</span>
+          <span data-pt>Acesso direto à equipe de engenheiros para dúvidas técnicas e operacionais após a compra.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section class="opportunity-section">
+  <div class="opportunity-inner">
+    <div class="opportunity-img">
+      <img src="img/img_09.webp" alt="Oportunidad de negocio reciclaje">
+    </div>
+    <div class="opportunity-text">
+      <div class="hero-badge" style="display:inline-flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <span data-es>La Oportunidad</span>
+        <span data-en>The Opportunity</span>
+        <span data-pt>A Oportunidade</span>
+      </div>
+      <h2>
+        <span data-es>El mercado del reciclaje de plástico en<br><em>México y LATAM crece cada año</em></span>
+        <span data-en>The plastic recycling market in<br><em>Mexico and LATAM grows every year</em></span>
+        <span data-pt>O mercado de reciclagem de plástico no<br><em>México e LATAM cresce a cada ano</em></span>
+      </h2>
+      <p>
+        <span data-es>La demanda de material reciclado por parte de empresas manufactureras supera la oferta actual. Los procesadores de plástico son escasos. Quien tenga la máquina y el proceso tiene el negocio.</span>
+        <span data-en>Demand for recycled material from manufacturing companies exceeds current supply. Plastic processors are scarce. Whoever has the machine and process has the business.</span>
+        <span data-pt>A demanda de material reciclado por empresas manufatureiras supera a oferta atual. Processadores de plástico são escassos. Quem tiver a máquina e o processo tem o negócio.</span>
+      </p>
+      <p>
+        <span data-es>No necesitas experiencia previa. Nosotros te enseñamos todo: desde identificar el plástico hasta vender el material procesado a buen precio.</span>
+        <span data-en>No prior experience needed. We teach you everything: from identifying plastic to selling processed material at a good price.</span>
+        <span data-pt>Não precisa de experiência prévia. Ensinamos tudo: desde identificar o plástico até vender o material processado a um bom preço.</span>
+      </p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <strong>8%</strong>
+          <span data-es>Crecimiento anual del sector (aprox.)</span>
+          <span data-en>Annual sector growth (approx.)</span>
+          <span data-pt>Crescimento anual do setor (aprox.)</span>
+        </div>
+        <div class="stat-item">
+          <strong>&lt;10%</strong>
+          <span data-es>Del plástico en MX se recicla actualmente</span>
+          <span data-en>Of plastic in MX currently recycled</span>
+          <span data-pt>Do plástico no MX atualmente reciclado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP BY STEP -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <div class="section-header">
+      <h2>
+        <span data-es>Cómo Arrancar Tu Negocio</span>
+        <span data-en>How to Launch Your Business</span>
+        <span data-pt>Como Iniciar Seu Negócio</span>
+      </h2>
+      <p>
+        <span data-es>Paso a paso, con RecyMach de tu lado.</span>
+        <span data-en>Step by step, with RecyMach by your side.</span>
+        <span data-pt>Passo a passo, com RecyMach ao seu lado.</span>
+      </p>
+    </div>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4 data-es>Consulta Gratuita</h4>
+          <h4 data-en>Free Consultation</h4>
+          <h4 data-pt>Consulta Gratuita</h4>
+          <p>
+            <span data-es>Nos platicas qué plástico tienes disponible en tu zona, tu presupuesto y tu objetivo. Definimos juntos qué máquina es la ideal para tu caso.</span>
+            <span data-en>You tell us what plastic is available in your area, your budget, and your goal. Together we define which machine is ideal for your case.</span>
+            <span data-pt>Você nos conta qual plástico está disponível na sua região, seu orçamento e seu objetivo. Definimos juntos qual máquina é ideal para o seu caso.</span>
+          </p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4 data-es>Cotización y Diseño</h4>
+          <h4 data-en>Quote and Design</h4>
+          <h4 data-pt>Cotação e Design</h4>
+          <p>
+            <span data-es>Recibis tu cotización detallada. Al confirmar, iniciamos el diseño y fabricación a medida. No pagas de más por características que no necesitas.</span>
+            <span data-en>You receive your detailed quote. Upon confirmation, we start custom design and manufacturing. You don't overpay for features you don't need.</span>
+            <span data-pt>Você recebe sua cotação detalhada. Ao confirmar, iniciamos o design e fabricação sob medida. Você não paga a mais por recursos que não precisa.</span>
+          </p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4 data-es>Fabricación y Entrega</h4>
+          <h4 data-en>Manufacturing and Delivery</h4>
+          <h4 data-pt>Fabricação e Entrega</h4>
+          <p>
+            <span data-es>Tu máquina se fabrica en 30 a 60 días. Te enviamos fotos y videos del avance. Entregamos en México o coordinamos el envío a tu país.</span>
+            <span data-en>Your machine is manufactured in 30 to 60 days. We send you photos and videos of progress. We deliver in Mexico or coordinate shipping to your country.</span>
+            <span data-pt>Sua máquina é fabricada em 30 a 60 dias. Enviamos fotos e vídeos do progresso. Entregamos no México ou coordenamos o envio para o seu país.</span>
+          </p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4 data-es>Capacitación y Arranque</h4>
+          <h4 data-en>Training and Launch</h4>
+          <h4 data-pt>Treinamento e Lançamento</h4>
+          <p>
+            <span data-es>Te capacitamos en el uso, mantenimiento y optimización de tu máquina. También en los fundamentos del negocio de reciclaje: proveedores, compradores y precios.</span>
+            <span data-en>We train you in use, maintenance and optimization of your machine. Also in recycling business fundamentals: suppliers, buyers and prices.</span>
+            <span data-pt>Treinamos você no uso, manutenção e otimização da sua máquina. Também nos fundamentos do negócio de reciclagem: fornecedores, compradores e preços.</span>
+          </p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4 data-es>Generas Ingresos</h4>
+          <h4 data-en>You Generate Income</h4>
+          <h4 data-pt>Você Gera Renda</h4>
+          <p>
+            <span data-es>Tu negocio de reciclaje está operando. Compras plástico, lo procesas, lo vendes a empresas que demandan material reciclado. RecyMach sigue disponible para soporte técnico.</span>
+            <span data-en>Your recycling business is operating. You buy plastic, process it, sell it to companies that demand recycled material. RecyMach remains available for technical support.</span>
+            <span data-pt>Seu negócio de reciclagem está operando. Você compra plástico, processa e vende para empresas que demandam material reciclado. RecyMach continua disponível para suporte técnico.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MACHINES FOR BEGINNERS -->
+<section class="machines-section">
+  <div class="machines-inner">
+    <div class="section-header">
+      <h2>
+        <span data-es>Máquinas Recomendadas para Empezar</span>
+        <span data-en>Recommended Starter Machines</span>
+        <span data-pt>Máquinas Recomendadas para Começar</span>
+      </h2>
+      <p>
+        <span data-es>Para quienes arrancan, estas son las entradas más accesibles con alto potencial de retorno.</span>
+        <span data-en>For those starting out, these are the most accessible entries with high return potential.</span>
+        <span data-pt>Para quem está começando, estas são as entradas mais acessíveis com alto potencial de retorno.</span>
+      </p>
+    </div>
+    <div class="machines-grid">
+      <div class="machine-card">
+        <div class="machine-img">
+          <img src="img/molino.webp" alt="Molino para Plástico">
+        </div>
+        <div class="machine-body">
+          <span class="machine-tag" data-es>Ideal para empezar</span>
+          <span class="machine-tag" data-en>Ideal to start</span>
+          <span class="machine-tag" data-pt>Ideal para começar</span>
+          <h4 style="margin-top:0.75rem;" data-es>Molino para Plástico</h4>
+          <h4 style="margin-top:0.75rem;" data-en>Plastic Mill</h4>
+          <h4 style="margin-top:0.75rem;" data-pt>Moinho para Plástico</h4>
+          <p>
+            <span data-es>Inversión de entrada accesible. Convierte plástico rígido (PET, HDPE, PP) en granulado. Alta demanda del material resultante.</span>
+            <span data-en>Accessible entry investment. Converts rigid plastic (PET, HDPE, PP) into granulate. High demand for the resulting material.</span>
+            <span data-pt>Investimento de entrada acessível. Converte plástico rígido (PET, HDPE, PP) em granulado. Alta demanda pelo material resultante.</span>
+          </p>
+          <button class="btn-blue" onclick="openModal()" style="width:100%;padding:0.7rem;font-size:0.9rem;">
+            <span data-es>Consultar precio</span>
+            <span data-en>Ask for price</span>
+            <span data-pt>Consultar preço</span>
+          </button>
+        </div>
+      </div>
+      <div class="machine-card">
+        <div class="machine-img">
+          <img src="img/prensa_vertical.webp" alt="Prensa Hidráulica Vertical">
+        </div>
+        <div class="machine-body">
+          <span class="machine-tag" data-es>Alta demanda</span>
+          <span class="machine-tag" data-en>High demand</span>
+          <span class="machine-tag" data-pt>Alta demanda</span>
+          <h4 style="margin-top:0.75rem;" data-es>Prensa Vertical</h4>
+          <h4 style="margin-top:0.75rem;" data-en>Vertical Press</h4>
+          <h4 style="margin-top:0.75rem;" data-pt>Prensa Vertical</h4>
+          <p>
+            <span data-es>Compacta cartón, aluminio y PET. Negocio directo: compras residuos voluminosos baratos, los compactas y vendes pacas a precio superior.</span>
+            <span data-en>Compacts cardboard, aluminum and PET. Direct business: buy cheap bulky waste, compact it, sell bales at higher price.</span>
+            <span data-pt>Compacta papelão, alumínio e PET. Negócio direto: compre resíduos volumosos baratos, compacte e venda fardos a preço superior.</span>
+          </p>
+          <button class="btn-blue" onclick="openModal()" style="width:100%;padding:0.7rem;font-size:0.9rem;">
+            <span data-es>Consultar precio</span>
+            <span data-en>Ask for price</span>
+            <span data-pt>Consultar preço</span>
+          </button>
+        </div>
+      </div>
+      <div class="machine-card">
+        <div class="machine-img">
+          <img src="img/aglutinadora.webp" alt="Aglutinadora">
+        </div>
+        <div class="machine-body">
+          <span class="machine-tag" data-es>Plástico suave</span>
+          <span class="machine-tag" data-en>Soft plastic</span>
+          <span class="machine-tag" data-pt>Plástico mole</span>
+          <h4 style="margin-top:0.75rem;" data-es>Aglutinadora</h4>
+          <h4 style="margin-top:0.75rem;" data-en>Agglomerator</h4>
+          <h4 style="margin-top:0.75rem;" data-pt>Aglutinadora</h4>
+          <p>
+            <span data-es>Para bolsas, film y plástico suave. Material muy abundante y barato. Aglomerado tiene buen precio de reventa. Complementa un molino perfectamente.</span>
+            <span data-en>For bags, film and soft plastic. Very abundant and cheap material. Agglomerate has good resale price. Complements a mill perfectly.</span>
+            <span data-pt>Para sacolas, filme e plástico mole. Material muito abundante e barato. Aglomerado tem bom preço de revenda. Complementa um moinho perfeitamente.</span>
+          </p>
+          <button class="btn-blue" onclick="openModal()" style="width:100%;padding:0.7rem;font-size:0.9rem;">
+            <span data-es>Consultar precio</span>
+            <span data-en>Ask for price</span>
+            <span data-pt>Consultar preço</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-header">
+      <h2>FAQ</h2>
+      <p>
+        <span data-es>Preguntas frecuentes de quienes quieren iniciar.</span>
+        <span data-en>Frequently asked questions from those wanting to start.</span>
+        <span data-pt>Perguntas frequentes de quem quer começar.</span>
+      </p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-es>¿Necesito experiencia previa en reciclaje o maquinaria?</span>
+          <span data-en>Do I need prior experience in recycling or machinery?</span>
+          <span data-pt>Preciso de experiência prévia em reciclagem ou maquinário?</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span data-es>No. La capacitación está incluida y está diseñada para personas sin experiencia técnica previa. El equipo de RecyMach te acompaña desde el primer día de operación.</span>
+            <span data-en>No. Training is included and designed for people without prior technical experience. The RecyMach team accompanies you from day one of operation.</span>
+            <span data-pt>Não. O treinamento está incluído e é projetado para pessoas sem experiência técnica prévia. A equipe da RecyMach acompanha você desde o primeiro dia de operação.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-es>¿Dónde consigo el plástico para procesar?</span>
+          <span data-en>Where do I source the plastic to process?</span>
+          <span data-pt>Onde consigo o plástico para processar?</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span data-es>La asesoría de negocio incluye orientación sobre fuentes de material: empresas manufactureras, centros de acopio, municipios y pepenas. En tu zona hay plástico disponible — el reto es organizarlo, y te enseñamos cómo.</span>
+            <span data-en>Business guidance includes orientation on material sources: manufacturing companies, collection centers, municipalities and junkyards. There is plastic available in your area — the challenge is organizing it, and we teach you how.</span>
+            <span data-pt>A orientação de negócios inclui informações sobre fontes de material: empresas manufatureiras, centros de coleta, municípios e catadores. Há plástico disponível na sua região — o desafio é organizá-lo, e ensinamos como.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-es>¿A quién le vendo el plástico que proceso?</span>
+          <span data-en>Who do I sell the processed plastic to?</span>
+          <span data-pt>Para quem vendo o plástico processado?</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span data-es>Empresas que fabrican productos de plástico buscan constantemente material granulado o peletizado reciclado como insumo. También hay mercado en empresas de construcción, empaques y exportación. Te enseñamos a identificar compradores en tu región.</span>
+            <span data-en>Companies that manufacture plastic products constantly seek recycled granulated or pelletized material as input. There's also market in construction companies, packaging and export. We teach you to identify buyers in your region.</span>
+            <span data-pt>Empresas que fabricam produtos de plástico buscam constantemente material granulado ou peletizado reciclado como insumo. Também há mercado em empresas de construção, embalagens e exportação. Ensinamos a identificar compradores na sua região.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-es>¿Cuánto espacio necesito para instalar la máquina?</span>
+          <span data-en>How much space do I need to install the machine?</span>
+          <span data-pt>Quanto espaço preciso para instalar a máquina?</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span data-es>Depende de la máquina. Un molino pequeño puede operar en un espacio de 20–30 m². Una prensa vertical en 15–25 m². Diseñamos la máquina considerando el espacio que tienes disponible.</span>
+            <span data-en>Depends on the machine. A small mill can operate in a 20–30 m² space. A vertical press in 15–25 m². We design the machine considering the space you have available.</span>
+            <span data-pt>Depende da máquina. Um moinho pequeno pode operar em um espaço de 20–30 m². Uma prensa vertical em 15–25 m². Projetamos a máquina considerando o espaço disponível.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-es>¿En cuánto tiempo recupero la inversión de la máquina?</span>
+          <span data-en>How quickly can I recover the machine investment?</span>
+          <span data-pt>Em quanto tempo recupero o investimento da máquina?</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span data-es>El tiempo de recuperación depende del volumen que proceses y los precios de tu mercado local. En nuestra consulta gratuita hacemos contigo un análisis básico de flujo de efectivo basado en tu situación específica.</span>
+            <span data-en>Recovery time depends on the volume you process and prices in your local market. In our free consultation, we do a basic cash flow analysis with you based on your specific situation.</span>
+            <span data-pt>O tempo de recuperação depende do volume que você processa e dos preços do seu mercado local. Na nossa consulta gratuita, fazemos com você uma análise básica de fluxo de caixa baseada na sua situação específica.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>
+      <span data-es>Tu negocio de reciclaje puede<br>empezar <em>este mes</em></span>
+      <span data-en>Your recycling business can<br>start <em>this month</em></span>
+      <span data-pt>Seu negócio de reciclagem pode<br>começar <em>este mês</em></span>
+    </h2>
+    <p>
+      <span data-es>Una llamada de 20 minutos con nuestro equipo es suficiente para definir qué máquina necesitas y cuánto necesitas invertir. Sin compromisos.</span>
+      <span data-en>A 20-minute call with our team is enough to define which machine you need and how much to invest. No commitment.</span>
+      <span data-pt>Uma chamada de 20 minutos com nossa equipe é suficiente para definir qual máquina você precisa e quanto precisa investir. Sem compromissos.</span>
+    </p>
+    <button class="btn-blue" onclick="openModal()" style="max-width:420px;margin:0 auto;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      <span data-es>Iniciar Mi Negocio — WhatsApp</span>
+      <span data-en>Start My Business — WhatsApp</span>
+      <span data-pt>Iniciar Meu Negócio — WhatsApp</span>
+    </button>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="bizModal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>
+        <span data-es>Iniciar Mi Negocio de Reciclaje</span>
+        <span data-en>Start My Recycling Business</span>
+        <span data-pt>Iniciar Meu Negócio de Reciclagem</span>
+      </h3>
+      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
+    </div>
+    <form id="bizForm" onsubmit="submitBiz(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label data-es>Nombre completo *</label>
+          <label data-en>Full name *</label>
+          <label data-pt>Nome completo *</label>
+          <input type="text" id="b-name" required placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label data-es>Teléfono / WhatsApp *</label>
+          <label data-en>Phone / WhatsApp *</label>
+          <label data-pt>Telefone / WhatsApp *</label>
+          <input type="tel" id="b-phone" required placeholder="+52 o +1...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-es>Capital disponible *</label>
+        <label data-en>Available capital *</label>
+        <label data-pt>Capital disponível *</label>
+        <select id="b-capital" required>
+          <option value="" data-es>Seleccionar rango...</option>
+          <option value="" data-en>Select range...</option>
+          <option value="" data-pt>Selecionar faixa...</option>
+          <option value="$75k–$150k MXN">$75,000 – $150,000 MXN (~$5k–$10k USD)</option>
+          <option value="$150k–$300k MXN">$150,000 – $300,000 MXN (~$10k–$20k USD)</option>
+          <option value="$300k–$600k MXN">$300,000 – $600,000 MXN (~$20k–$40k USD)</option>
+          <option value="más de $600k MXN" data-es>Más de $600,000 MXN (+$40k USD)</option>
+          <option value="more than $600k MXN" data-en>More than $600,000 MXN (+$40k USD)</option>
+          <option value="mais de $600k MXN" data-pt>Mais de $600.000 MXN (+$40k USD)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-es>Ciudad / Estado</label>
+          <label data-en>City / State</label>
+          <label data-pt>Cidade / Estado</label>
+          <input type="text" id="b-city" placeholder="CDMX, Monterrey...">
+        </div>
+        <div class="form-group">
+          <label data-es>País</label>
+          <label data-en>Country</label>
+          <label data-pt>País</label>
+          <input type="text" id="b-country" placeholder="México, USA...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-es>¿Qué plástico quieres procesar?</label>
+        <label data-en>What plastic do you want to process?</label>
+        <label data-pt>Que plástico você quer processar?</label>
+        <textarea id="b-plastic" placeholder="PET, HDPE, PP, bolsas, mixto... o si no lo sabes escribe 'no sé'"></textarea>
+      </div>
+      <!-- Honeypot -->
+      <div class="hp-field form-group">
+        <label>Leave empty</label>
+        <input type="text" name="website" autocomplete="off" tabindex="-1">
+      </div>
+      <button type="submit" class="form-submit">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        <span data-es>Enviar por WhatsApp</span>
+        <span data-en>Send via WhatsApp</span>
+        <span data-pt>Enviar pelo WhatsApp</span>
+      </button>
+      <p class="form-note">
+        <span data-es>Consulta 100% gratuita. Sin compromiso de compra.</span>
+        <span data-en>100% free consultation. No purchase commitment.</span>
+        <span data-pt>Consulta 100% gratuita. Sem compromisso de compra.</span>
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="img/recymach_logo.svg" alt="RecyMach"></div>
+        <p>
+          <span data-es>Fabricantes directos de maquinaria industrial para reciclaje de plástico. Ingenieros del IPN con respaldo de Recicla Manahuia (30+ años).</span>
+          <span data-en>Direct manufacturers of industrial plastic recycling machinery. IPN engineers backed by Recicla Manahuia (30+ years).</span>
+          <span data-pt>Fabricantes diretos de maquinário industrial. Engenheiros do IPN com apoio da Recicla Manahuia (30+ anos).</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4 data-es>Páginas</h4><h4 data-en>Pages</h4><h4 data-pt>Páginas</h4>
+        <a href="index.html" data-es>Inicio</a><a href="index.html" data-en>Home</a><a href="index.html" data-pt>Início</a>
+        <a href="maquinaria.html" data-es>Maquinaria</a><a href="maquinaria.html" data-en>Machinery</a><a href="maquinaria.html" data-pt>Maquinário</a>
+        <a href="invertir.html" data-es>Invertir</a><a href="invertir.html" data-en>Invest</a><a href="invertir.html" data-pt>Investir</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-es>Mercados</h4><h4 data-en>Markets</h4><h4 data-pt>Mercados</h4>
+        <a href="#">México</a><a href="#">USA (USMCA)</a><a href="#">LATAM</a><a href="#">Brasil</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4 data-es>Contacto</h4><h4 data-en>Contact</h4><h4 data-pt>Contato</h4>
+        <a href="https://wa.me/5215574117293" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          +52 1 55 7411 7293
+        </a>
+        <a href="mailto:recymach@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          recymach@gmail.com
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 RecyMach. <span data-es>Todos los derechos reservados.</span><span data-en>All rights reserved.</span><span data-pt>Todos os direitos reservados.</span></p>
+      <div class="footer-badges">
+        <img src="img/hecho_en_mexico.svg" alt="Hecho en México">
+        <img src="img/ipn_official.svg" alt="IPN">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/5215574117293?text=Hola%20RecyMach%2C%20quiero%20iniciar%20mi%20negocio%20de%20reciclaje%20(Modelo%20B)" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+function getLang(){
+  const url=new URLSearchParams(window.location.search).get('lang');
+  if(url&&['es','en','pt'].includes(url))return url;
+  const stored=localStorage.getItem('rm_lang');
+  if(stored&&['es','en','pt'].includes(stored))return stored;
+  const nav=navigator.language||'es';
+  if(nav.startsWith('en'))return 'en';
+  if(nav.startsWith('pt'))return 'pt';
+  return 'es';
+}
+function setLang(l){
+  localStorage.setItem('rm_lang',l);
+  document.body.className=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  const btn=document.getElementById('btn-'+l);
+  if(btn)btn.classList.add('active');
+}
+window.setLang=setLang;
+setLang(getLang());
+
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+window.toggleFaq=toggleFaq;
+
+function openModal(){
+  document.getElementById('bizModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('bizModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+window.openModal=openModal;
+window.closeModal=closeModal;
+document.getElementById('bizModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+function buildWA(lines){
+  return 'https://wa.me/5215574117293?text='+lines.map(l=>encodeURIComponent(l)).join('%0A');
+}
+function submitBiz(e){
+  e.preventDefault();
+  const hp=document.querySelector('.hp-field input');
+  if(hp&&hp.value)return;
+  const name=document.getElementById('b-name').value.trim();
+  const phone=document.getElementById('b-phone').value.trim();
+  const capital=document.getElementById('b-capital').value;
+  const city=document.getElementById('b-city').value.trim();
+  const country=document.getElementById('b-country').value.trim();
+  const plastic=document.getElementById('b-plastic').value.trim();
+  const lang=document.body.className;
+  const lines=lang==='en'?[
+    '--- RecyMach Business Inquiry (Model B) ---',
+    'Name: '+name,'Phone: '+phone,
+    'Capital: '+capital,
+    'City/State: '+(city||'Not specified'),
+    'Country: '+(country||'Not specified'),
+    'Plastic to process: '+(plastic||'Not specified'),
+  ]:lang==='pt'?[
+    '--- Consulta de Negócio RecyMach (Modelo B) ---',
+    'Nome: '+name,'Telefone: '+phone,
+    'Capital: '+capital,
+    'Cidade/Estado: '+(city||'Não especificado'),
+    'País: '+(country||'Não especificado'),
+    'Plástico a processar: '+(plastic||'Não especificado'),
+  ]:[
+    '--- Consulta Negocio RecyMach (Modelo B) ---',
+    'Nombre: '+name,'Teléfono: '+phone,
+    'Capital: '+capital,
+    'Ciudad/Estado: '+(city||'No especificado'),
+    'País: '+(country||'No especificado'),
+    'Plástico a procesar: '+(plastic||'No especificado'),
+  ];
+  window.open(buildWA(lines),'_blank');
+  closeModal();
+}
+</script>
+</body>
+</html>
