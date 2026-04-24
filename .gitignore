@@ -1,0 +1,18 @@
+# Scripts de desarrollo
+*.py
+*.jsonl
+
+# Carpetas de trabajo
+.claude/
+deploy/
+img/temp_extract/
+"Fotos y videos triturador de 2 ejes"/
+
+# Archivos viejos
+recymach_v6.html
+recymach_v*.html
+
+# Sistema
+*.tmp
+Thumbs.db
+.DS_Store
