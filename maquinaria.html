@@ -1067,16 +1067,11 @@ function setLang(l){
 window.setLang=setLang;
 setLang(getLang());
 
-// forms replaced by WhatsApp
-  m.classList.add('open');
-  document.body.style.overflow='hidden';
-}
 function closeModal(){
   var m = document.getElementById('quoteModalLegacy');
   if(m) m.classList.remove('open');
   document.body.style.overflow='';
 }
-window.openModal=openModal;
 window.closeModal=closeModal;
 var _legacyM = document.getElementById('quoteModalLegacy');
 if(_legacyM) _legacyM.addEventListener('click',function(e){if(e.target===this)closeModal();});
