@@ -89,6 +89,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#ffffff;backdrop
 .product-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
 .product-card:hover .product-img img{transform:scale(1.05);}
 .product-img-ph{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;width:100%;}
+.product-img-duo{display:flex;flex-direction:row;gap:2px;}
+.duo-half{flex:1;overflow:hidden;height:100%;}
+.duo-half img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 0.4s;}
+.product-card:hover .duo-half img{transform:scale(1.05);}
 .product-img-ph svg{width:72px;height:72px;color:var(--g3);opacity:0.4;}
 .star-badge{position:absolute;top:1rem;left:1rem;background:var(--g);color:#fff;font-size:0.72rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:100px;letter-spacing:0.04em;}
 .product-body{padding:1.5rem;flex:1;display:flex;flex-direction:column;}
@@ -465,7 +469,10 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
       </div>
 
       <div class="product-card" data-cat="prensas">
-        <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div class="product-img product-img-duo">
+          <div class="duo-half"><img src="img/prensa_vertical.jpg" alt="Prensa hidráulica vertical RecyMach" loading="lazy"></div>
+          <div class="duo-half"><img src="img/prensa_horizontal.jpg" alt="Prensa hidráulica horizontal RecyMach" loading="lazy"></div>
+        </div>
         <div class="product-body">
           <h3><span data-es>Prensas Hidráulicas</span><span data-en>Hydraulic Presses</span><span data-pt>Prensas Hidráulicas</span></h3>
           <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">5 – 75 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>50 – 750 kg/paca</span><span data-en>50 – 750 kg/bale</span><span data-pt>50 – 750 kg/fardo</span></span></div></div>
