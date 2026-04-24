@@ -236,6 +236,75 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
 .car-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.45);cursor:pointer;transition:background 0.2s,transform 0.2s;}
 .car-dot.active{background:#fff;transform:scale(1.3);}
 .car-hint{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.6);color:rgba(255,255,255,0.75);font-size:0.7rem;padding:3px 10px;border-radius:100px;white-space:nowrap;display:flex;align-items:center;gap:5px;z-index:3;}
+
+/* ── QUOTE MODAL ─────────────────────────────────────────────────────────── */
+.qm-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:2000;
+  display:flex;align-items:center;justify-content:center;padding:1rem;
+  opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.qm-overlay.open{opacity:1;pointer-events:all;}
+.qm-box{background:#161616;border:1px solid rgba(255,255,255,0.1);border-radius:20px;
+  width:100%;max-width:580px;max-height:92vh;overflow-y:auto;padding:2rem 2rem 2.5rem;
+  position:relative;scrollbar-width:thin;}
+.qm-box::-webkit-scrollbar{width:4px;}
+.qm-box::-webkit-scrollbar-thumb{background:var(--g3);border-radius:4px;}
+.qm-close{position:absolute;top:1.1rem;right:1.1rem;background:rgba(255,255,255,0.07);
+  border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.2rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.qm-close:hover{background:rgba(45,138,78,0.4);}
+.qm-title{font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 0.3rem;}
+.qm-subtitle{font-size:0.8rem;color:var(--text2);margin:0 0 1.5rem;}
+.qm-machine-tag{display:inline-block;background:rgba(45,138,78,0.15);
+  border:1px solid rgba(45,138,78,0.4);color:var(--g3);font-size:0.75rem;
+  font-weight:700;padding:0.2rem 0.75rem;border-radius:100px;margin-bottom:1.2rem;}
+/* sections */
+.qm-section{margin-bottom:1.4rem;}
+.qm-section-title{font-size:0.72rem;font-weight:700;color:var(--g3);
+  text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.8rem;
+  padding-bottom:0.4rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+/* field */
+.qm-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+@media(max-width:480px){.qm-row{grid-template-columns:1fr;}}
+.qm-field{margin-bottom:0.85rem;}
+.qm-field label{display:block;font-size:0.77rem;font-weight:600;color:var(--text2);
+  margin-bottom:0.3rem;}
+.qm-field label span.req{color:#f87171;margin-left:2px;}
+.qm-field input,.qm-field select,.qm-field textarea{
+  width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);
+  border-radius:10px;color:#fff;font-size:0.88rem;padding:0.6rem 0.85rem;
+  transition:border-color 0.2s;box-sizing:border-box;font-family:inherit;}
+.qm-field input:focus,.qm-field select:focus,.qm-field textarea:focus{
+  outline:none;border-color:var(--g3);}
+.qm-field select option{background:#1a1a1a;}
+.qm-field textarea{resize:vertical;min-height:80px;}
+/* radio / checkbox group */
+.qm-options{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.3rem;}
+.qm-opt{display:flex;align-items:center;gap:0.4rem;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:0.45rem 0.75rem;cursor:pointer;transition:all 0.2s;
+  font-size:0.82rem;color:var(--text2);}
+.qm-opt:has(input:checked){background:rgba(45,138,78,0.15);
+  border-color:rgba(45,138,78,0.5);color:#fff;}
+.qm-opt input{accent-color:var(--g);width:14px;height:14px;}
+/* submit btn */
+.qm-submit{width:100%;background:var(--g);color:#fff;border:none;
+  border-radius:12px;padding:0.9rem;font-size:1rem;font-weight:700;
+  cursor:pointer;transition:background 0.2s;margin-top:0.5rem;display:flex;
+  align-items:center;justify-content:center;gap:0.6rem;}
+.qm-submit:hover{background:var(--g2);}
+.qm-submit:disabled{opacity:0.6;cursor:not-allowed;}
+/* success */
+.qm-success{text-align:center;padding:1rem 0;}
+.qm-success-icon{font-size:3rem;margin-bottom:0.75rem;}
+.qm-success h3{color:#fff;font-size:1.2rem;margin:0 0 0.5rem;}
+.qm-success p{color:var(--text2);font-size:0.88rem;margin:0 0 1.5rem;}
+.qm-wa-btn{display:inline-flex;align-items:center;gap:0.5rem;
+  background:#25D366;color:#fff;border:none;border-radius:12px;
+  padding:0.75rem 1.5rem;font-size:0.95rem;font-weight:700;cursor:pointer;
+  transition:background 0.2s;text-decoration:none;}
+.qm-wa-btn:hover{background:#1eb85a;}
+.qm-note{font-size:0.75rem;color:var(--text2);margin-top:1rem;
+  background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem 0.9rem;}
+
 </style>
 </head>
 <body class="es">
@@ -822,7 +891,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
 </section>
 
 <!-- MODAL -->
-<div class="modal-overlay" style="display:none!important" id="quoteModal" role="dialog" aria-modal="true">
+<div class="modal-overlay" style="display:none!important" id="quoteModalLegacy" role="dialog" aria-modal="true">
   <div class="modal">
     <div class="modal-header">
       <h3>
@@ -1003,12 +1072,14 @@ setLang(getLang());
   document.body.style.overflow='hidden';
 }
 function closeModal(){
-  document.getElementById('quoteModal').classList.remove('open');
+  var m = document.getElementById('quoteModalLegacy');
+  if(m) m.classList.remove('open');
   document.body.style.overflow='';
 }
 window.openModal=openModal;
 window.closeModal=closeModal;
-document.getElementById('quoteModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+var _legacyM = document.getElementById('quoteModalLegacy');
+if(_legacyM) _legacyM.addEventListener('click',function(e){if(e.target===this)closeModal();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 
 // CATEGORY FILTER
@@ -1113,5 +1184,440 @@ function openWA(machine) {
   window.open('https://wa.me/5215574117293?text=' + encodeURIComponent(msg), '_blank');
 }
 </script>
+
+<!-- ── QUOTE MODAL ── -->
+<div class="qm-overlay" id="quoteModal">
+  <div class="qm-box" role="dialog" aria-modal="true">
+    <button class="qm-close" onclick="closeQuote()" aria-label="Cerrar">&times;</button>
+
+    <!-- SUCCESS STATE -->
+    <div class="qm-success" id="qmSuccess" style="display:none">
+      <div class="qm-success-icon">✅</div>
+      <h3><span data-es>¡Cotización enviada!</span><span data-en>Quote sent!</span><span data-pt>Cotação enviada!</span></h3>
+      <p><span data-es>Recibimos tu solicitud. Te contactaremos pronto a tu correo y teléfono.</span><span data-en>We received your request. We'll contact you soon at your email and phone.</span><span data-pt>Recebemos sua solicitação. Entraremos em contato em breve pelo seu e-mail e telefone.</span></p>
+      <a class="qm-wa-btn" id="qmWaBtn" href="#" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        <span data-es>Enviar también por WhatsApp</span><span data-en>Also send via WhatsApp</span><span data-pt>Enviar também pelo WhatsApp</span>
+      </a>
+      <p class="qm-note"><span data-es>Al abrir WhatsApp verás el mensaje listo — solo presiona Enviar.</span><span data-en>WhatsApp will open with your message ready — just press Send.</span><span data-pt>O WhatsApp abrirá com a mensagem pronta — só pressione Enviar.</span></p>
+    </div>
+
+    <!-- FORM STATE -->
+    <div id="qmFormWrap">
+      <p class="qm-title"><span data-es>Solicitar Cotización</span><span data-en>Request a Quote</span><span data-pt>Solicitar Cotação</span></p>
+      <p class="qm-subtitle"><span data-es>Te respondemos en menos de 24 horas</span><span data-en>We reply in less than 24 hours</span><span data-pt>Respondemos em menos de 24 horas</span></p>
+      <div class="qm-machine-tag" id="qmMachineTag"></div>
+
+      <form id="qmForm" novalidate>
+        <!-- Contact section -->
+        <div class="qm-section">
+          <div class="qm-section-title"><span data-es>Datos de contacto</span><span data-en>Contact info</span><span data-pt>Dados de contato</span></div>
+          <div class="qm-row">
+            <div class="qm-field">
+              <label><span data-es>Nombre completo</span><span data-en>Full name</span><span data-pt>Nome completo</span><span class="req">*</span></label>
+              <input type="text" name="nombre" required>
+            </div>
+            <div class="qm-field">
+              <label><span data-es>Empresa / Negocio</span><span data-en>Company</span><span data-pt>Empresa</span></label>
+              <input type="text" name="empresa">
+            </div>
+          </div>
+          <div class="qm-row">
+            <div class="qm-field">
+              <label><span data-es>País</span><span data-en>Country</span><span data-pt>País</span><span class="req">*</span></label>
+              <select name="pais" required>
+                <option value="">— País / Country —</option>
+                <option>México</option><option>Estados Unidos / USA</option>
+                <option>Colombia</option><option>Brasil / Brazil</option>
+                <option>Guatemala</option><option>Costa Rica</option>
+                <option>Perú</option><option>Argentina</option>
+                <option>Chile</option><option>Ecuador</option>
+                <option>Otro / Other</option>
+              </select>
+            </div>
+            <div class="qm-field">
+              <label><span data-es>Estado / Ciudad</span><span data-en>State / City</span><span data-pt>Estado / Cidade</span><span class="req">*</span></label>
+              <input type="text" name="ciudad" required>
+            </div>
+          </div>
+          <div class="qm-row">
+            <div class="qm-field">
+              <label><span data-es>LADA + Teléfono</span><span data-en>Area code + Phone</span><span data-pt>DDD + Telefone</span><span class="req">*</span></label>
+              <input type="tel" name="telefono" placeholder="+52 55 0000 0000" required>
+            </div>
+            <div class="qm-field">
+              <label><span data-es>Correo electrónico</span><span data-en>Email</span><span data-pt>E-mail</span><span class="req">*</span></label>
+              <input type="email" name="email" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Machine-specific fields injected here -->
+        <div id="qmMachineFields"></div>
+
+        <!-- Comments -->
+        <div class="qm-section">
+          <div class="qm-section-title"><span data-es>Información adicional</span><span data-en>Additional info</span><span data-pt>Informações adicionais</span></div>
+          <div class="qm-field">
+            <label><span data-es>Comentarios / Detalles extra</span><span data-en>Comments / Extra details</span><span data-pt>Comentários / Detalhes extras</span></label>
+            <textarea name="comentarios" placeholder="Cualquier detalle adicional que nos ayude a cotizar mejor..."></textarea>
+          </div>
+        </div>
+
+        <p class="qm-note" style="margin-bottom:1rem;">
+          <span data-es>📧 Tu cotización llegará a nuestro correo y podrás enviárnosla también por WhatsApp al terminar.</span>
+          <span data-en>📧 Your quote will reach our email and you'll also be able to send it via WhatsApp when done.</span>
+          <span data-pt>📧 Sua cotação chegará ao nosso e-mail e você também poderá enviá-la pelo WhatsApp ao final.</span>
+        </p>
+
+        <button type="submit" class="qm-submit" id="qmSubmitBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <span data-es>Enviar Cotización</span><span data-en>Send Quote Request</span><span data-pt>Enviar Cotação</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// ── Machine field configurations ──────────────────────────────────────────
+var QM_FIELDS = {
+
+  'Trituradores 2 Ejes': {
+    title: { es:'Datos técnicos — Trituradores 2 Ejes', en:'Technical data — Dual-Shaft Shredders', pt:'Dados técnicos — Trituradores 2 Eixos' },
+    fields: [
+      { name:'material', label:{es:'Material a triturar',en:'Material to shred',pt:'Material a triturar'}, type:'text', req:true },
+      { name:'contiene_metales', label:{es:'¿Contiene metales o fierros?',en:'Contains metals or iron?',pt:'Contém metais ou ferragem?'}, type:'radio', opts:{es:['Sí','No','No sé'],en:['Yes','No','Not sure'],pt:['Sim','Não','Não sei']} },
+      { name:'dimensiones', label:{es:'Dimensiones pieza más grande (Largo × Ancho × Alto)',en:'Largest piece dimensions (L × W × H)',pt:'Dimensões da maior peça (C × L × A)'}, type:'text', ph:{es:'ej: 50 × 30 × 20 cm',en:'e.g. 50 × 30 × 20 cm',pt:'ex: 50 × 30 × 20 cm'} },
+      { name:'produccion', label:{es:'Producción requerida (kg/hora)',en:'Required production (kg/hr)',pt:'Produção necessária (kg/h)'}, type:'number', ph:{es:'ej: 500',en:'e.g. 500',pt:'ex: 500'} },
+      { name:'tamano_salida', label:{es:'Tamaño de salida deseado',en:'Desired output size',pt:'Tamanho de saída desejado'}, type:'text', ph:{es:'ej: 50 mm o descripción',en:'e.g. 50 mm or description',pt:'ex: 50 mm ou descrição'} },
+      { name:'humedad', label:{es:'Condición del material',en:'Material condition',pt:'Condição do material'}, type:'radio', opts:{es:['Seco','Húmedo'],en:['Dry','Wet'],pt:['Seco','Úmido']} }
+    ]
+  },
+
+  'Trituradores 1 Eje': {
+    title: { es:'Datos técnicos — Trituradores 1 Eje', en:'Technical data — Single-Shaft Shredders', pt:'Dados técnicos — Trituradores 1 Eixo' },
+    fields: [
+      { name:'material', label:{es:'Material a triturar',en:'Material to shred',pt:'Material a triturar'}, type:'text', req:true },
+      { name:'dimensiones', label:{es:'Dimensiones pieza más grande (L × A × H)',en:'Largest piece dimensions (L × W × H)',pt:'Dimensões da maior peça (C × L × A)'}, type:'text', ph:{es:'ej: 50 × 30 × 20 cm',en:'e.g. 50 × 30 × 20 cm',pt:'ex: 50 × 30 × 20 cm'} },
+      { name:'produccion', label:{es:'Producción requerida (kg/hora)',en:'Required production (kg/hr)',pt:'Produção necessária (kg/h)'}, type:'number' },
+      { name:'tamano_salida', label:{es:'Tamaño de salida deseado',en:'Desired output size',pt:'Tamanho de saída desejado'}, type:'text', ph:{es:'ej: 30 mm',en:'e.g. 30 mm',pt:'ex: 30 mm'} },
+      { name:'humedad', label:{es:'Condición del material',en:'Material condition',pt:'Condição do material'}, type:'radio', opts:{es:['Seco','Húmedo'],en:['Dry','Wet'],pt:['Seco','Úmido']} }
+    ]
+  },
+
+  'Molinos para Plástico': {
+    title: { es:'Datos técnicos — Molinos', en:'Technical data — Plastic Mills', pt:'Dados técnicos — Moinhos' },
+    fields: [
+      { name:'material', label:{es:'Material a moler',en:'Material to grind',pt:'Material a moer'}, type:'text', req:true },
+      { name:'dimensiones', label:{es:'Dimensiones pieza más grande (L × A × H)',en:'Largest piece (L × W × H)',pt:'Maior peça (C × L × A)'}, type:'text', ph:{es:'ej: 40 × 20 × 15 cm',en:'e.g. 40 × 20 × 15 cm',pt:'ex: 40 × 20 × 15 cm'} },
+      { name:'produccion', label:{es:'Producción requerida (kg/hora)',en:'Required production (kg/hr)',pt:'Produção necessária (kg/h)'}, type:'number' },
+      { name:'malla_salida', label:{es:'Tamaño de malla deseado (mm)',en:'Desired screen size (mm)',pt:'Tamanho de malha desejado (mm)'}, type:'text', ph:{es:'ej: 8 mm, 12 mm',en:'e.g. 8 mm, 12 mm',pt:'ex: 8 mm, 12 mm'} },
+      { name:'limpieza', label:{es:'Estado del material',en:'Material condition',pt:'Estado do material'}, type:'radio', opts:{es:['Limpio','Con contaminantes'],en:['Clean','Contaminated'],pt:['Limpo','Com contaminantes']} }
+    ]
+  },
+
+  'Aglutinadoras': {
+    title: { es:'Datos técnicos — Aglutinadoras', en:'Technical data — Agglomerators', pt:'Dados técnicos — Aglutinadoras' },
+    fields: [
+      { name:'tipo_film', label:{es:'Tipo de film / plástico',en:'Film / plastic type',pt:'Tipo de filme / plástico'}, type:'text', req:true, ph:{es:'ej: LDPE, PP film, LLDPE',en:'e.g. LDPE, PP film, LLDPE',pt:'ex: LDPE, PP film, LLDPE'} },
+      { name:'limpieza_film', label:{es:'Estado del film',en:'Film condition',pt:'Estado do filme'}, type:'radio', opts:{es:['Limpio','Húmedo o con suciedad'],en:['Clean','Wet or dirty'],pt:['Limpo','Úmido ou sujo']} },
+      { name:'produccion', label:{es:'Producción requerida (kg/hora)',en:'Required production (kg/hr)',pt:'Produção necessária (kg/h)'}, type:'number' },
+      { name:'tiene_molino', label:{es:'¿Ya cuenta con molino previo?',en:'Do you already have a mill?',pt:'Já possui moinho prévio?'}, type:'radio', opts:{es:['Sí','No'],en:['Yes','No'],pt:['Sim','Não']} }
+    ]
+  },
+
+  'Peletizadoras': {
+    title: { es:'Datos técnicos — Peletizadoras', en:'Technical data — Pelletizers', pt:'Dados técnicos — Peletizadoras' },
+    fields: [
+      { name:'tipo_plastico', label:{es:'Tipo de plástico',en:'Plastic type',pt:'Tipo de plástico'}, type:'text', req:true, ph:{es:'ej: HDPE, PP, LDPE, PET',en:'e.g. HDPE, PP, LDPE, PET',pt:'ex: HDPE, PP, LDPE, PET'} },
+      { name:'estado_entrada', label:{es:'Estado del material de entrada',en:'Input material condition',pt:'Estado do material de entrada'}, type:'select', opts:{es:['Molido','Aglutinado','Pellets irregulares','Otro'],en:['Ground','Agglomerated','Irregular pellets','Other'],pt:['Moído','Aglutinado','Pellets irregulares','Outro']} },
+      { name:'produccion', label:{es:'Producción requerida (kg/hora)',en:'Required production (kg/hr)',pt:'Produção necessária (kg/h)'}, type:'number' },
+      { name:'tipo_pellet', label:{es:'Tipo de pellet deseado',en:'Desired pellet type',pt:'Tipo de pellet desejado'}, type:'radio', opts:{es:['Espagueti','Corte en caliente','No sé'],en:['Spaghetti die','Hot cut','Not sure'],pt:['Espaguete','Corte a quente','Não sei']} },
+      { name:'necesita_lavado', label:{es:'¿Requiere sistema de lavado?',en:'Requires washing system?',pt:'Requer sistema de lavagem?'}, type:'radio', opts:{es:['Sí','No','No sé'],en:['Yes','No','Not sure'],pt:['Sim','Não','Não sei']} }
+    ]
+  },
+
+  'Extrusoras': {
+    title: { es:'Datos técnicos — Extrusoras', en:'Technical data — Extruders', pt:'Dados técnicos — Extrusoras' },
+    fields: [
+      { name:'producto_fabricar', label:{es:'Producto que desea fabricar',en:'Product to manufacture',pt:'Produto a fabricar'}, type:'text', req:true, ph:{es:'ej: bolsa, perfil, madera plástica',en:'e.g. bag, profile, plastic wood',pt:'ex: sacola, perfil, madeira plástica'} },
+      { name:'material', label:{es:'Material a usar',en:'Material to use',pt:'Material a usar'}, type:'text', req:true, ph:{es:'ej: HDPE, PP, LDPE',en:'e.g. HDPE, PP, LDPE',pt:'ex: HDPE, PP, LDPE'} },
+      { name:'dimensiones_producto', label:{es:'Dimensiones del producto final',en:'Final product dimensions',pt:'Dimensões do produto final'}, type:'text', ph:{es:'ancho, calibre, diámetro, etc.',en:'width, gauge, diameter, etc.',pt:'largura, calibre, diâmetro, etc.'} },
+      { name:'produccion', label:{es:'Producción requerida',en:'Required production',pt:'Produção necessária'}, type:'text', ph:{es:'kg/hora o m/min',en:'kg/hr or m/min',pt:'kg/h ou m/min'} }
+    ]
+  },
+
+  'Extrusoras de Poliducto': {
+    title: { es:'Datos técnicos — Extrusoras de Poliducto', en:'Technical data — Polyduct Extruders', pt:'Dados técnicos — Extrusoras de Poliduto' },
+    fields: [
+      { name:'diametro', label:{es:'Diámetro del tubo deseado',en:'Desired tube diameter',pt:'Diâmetro do tubo desejado'}, type:'text', req:true, ph:{es:'ej: 1/2", 1", 2" o en mm',en:'e.g. 1/2", 1", 2" or mm',pt:'ex: 1/2", 1", 2" ou mm'} },
+      { name:'material', label:{es:'Material',en:'Material',pt:'Material'}, type:'text', ph:{es:'PE, PVC, PP, con nylon, etc.',en:'PE, PVC, PP, with nylon, etc.',pt:'PE, PVC, PP, com nylon, etc.'} },
+      { name:'presion', label:{es:'Presión de trabajo requerida',en:'Required working pressure',pt:'Pressão de trabalho necessária'}, type:'text', ph:{es:'ej: 60 psi, 150 psi',en:'e.g. 60 psi, 150 psi',pt:'ex: 60 psi, 150 psi'} },
+      { name:'produccion', label:{es:'Producción requerida',en:'Required production',pt:'Produção necessária'}, type:'text', ph:{es:'m/min o kg/hora',en:'m/min or kg/hr',pt:'m/min ou kg/h'} },
+      { name:'modulos', label:{es:'Módulos adicionales (selecciona los que necesites)',en:'Additional modules (select all that apply)',pt:'Módulos adicionais (selecione os necessários)'}, type:'checkboxes', opts:{es:['Trenzadora de fibra','Cámara de vacío','Cámara de enfriamiento','Embobinadora','Impresora'],en:['Fiber braider','Vacuum chamber','Cooling chamber','Winding machine','Printer'],pt:['Trançadeira de fibra','Câmara de vácuo','Câmara de resfriamento','Bobinadora','Impressora']} }
+    ]
+  },
+
+  'Triplay Plástico': {
+    title: { es:'Datos técnicos — Triplay Plástico', en:'Technical data — Plastic Plywood', pt:'Dados técnicos — Compensado Plástico' },
+    fields: [
+      { name:'dimensiones_hoja', label:{es:'Dimensiones de hoja deseada',en:'Desired sheet dimensions',pt:'Dimensões de chapa desejada'}, type:'text', ph:{es:'ej: 4×8 ft o medida especial',en:'e.g. 4×8 ft or special size',pt:'ex: 4×8 ft ou medida especial'} },
+      { name:'grosor', label:{es:'Grosor requerido (mm)',en:'Required thickness (mm)',pt:'Espessura necessária (mm)'}, type:'text', ph:{es:'ej: 10 mm, 15 mm, 25 mm',en:'e.g. 10 mm, 15 mm, 25 mm',pt:'ex: 10 mm, 15 mm, 25 mm'} },
+      { name:'material', label:{es:'Material de entrada',en:'Input material',pt:'Material de entrada'}, type:'text', req:true, ph:{es:'tipo de plástico reciclado o virgen',en:'recycled or virgin plastic type',pt:'tipo de plástico reciclado ou virgem'} },
+      { name:'aplicacion', label:{es:'Aplicación final del triplay',en:'Final plywood application',pt:'Aplicação final do compensado'}, type:'text', ph:{es:'ej: construcción, tarimas, muebles',en:'e.g. construction, pallets, furniture',pt:'ex: construção, paletes, móveis'} },
+      { name:'produccion', label:{es:'Producción requerida',en:'Required production',pt:'Produção necessária'}, type:'text', ph:{es:'piezas/día o kg/día',en:'pieces/day or kg/day',pt:'peças/dia ou kg/dia'} }
+    ]
+  },
+
+  'Prensas Hidráulicas': {
+    title: { es:'Datos técnicos — Prensas Hidráulicas', en:'Technical data — Hydraulic Presses', pt:'Dados técnicos — Prensas Hidráulicas' },
+    fields: [
+      { name:'tipo_prensa', label:{es:'Tipo de prensa',en:'Press type',pt:'Tipo de prensa'}, type:'radio', opts:{es:['Vertical','Horizontal','No sé / Recomiéndenme'],en:['Vertical','Horizontal','Not sure / Recommend'],pt:['Vertical','Horizontal','Não sei / Recomendem']} },
+      { name:'material', label:{es:'Material a compactar',en:'Material to compact',pt:'Material a compactar'}, type:'text', req:true, ph:{es:'ej: plástico, cartón, metal, PET',en:'e.g. plastic, cardboard, metal, PET',pt:'ex: plástico, papelão, metal, PET'} },
+      { name:'peso_paca', label:{es:'Peso de paca deseado (kg)',en:'Desired bale weight (kg)',pt:'Peso de fardo desejado (kg)'}, type:'number', ph:{es:'ej: 200, 400, 600',en:'e.g. 200, 400, 600',pt:'ex: 200, 400, 600'} },
+      { name:'produccion', label:{es:'Producción requerida',en:'Required production',pt:'Produção necessária'}, type:'text', ph:{es:'ej: 10 pacas/turno',en:'e.g. 10 bales/shift',pt:'ex: 10 fardos/turno'} }
+    ]
+  },
+
+  'Sopladoras de Envases': {
+    title: { es:'Datos técnicos — Sopladoras de Envases', en:'Technical data — Blow Molding', pt:'Dados técnicos — Sopradoras de Embalagens' },
+    fields: [
+      { name:'tipo_envase', label:{es:'Tipo de envase a fabricar',en:'Container type to manufacture',pt:'Tipo de embalagem a fabricar'}, type:'text', req:true, ph:{es:'ej: botella, garrafón, bidón',en:'e.g. bottle, jug, container',pt:'ex: garrafa, garrafão, galão'} },
+      { name:'capacidad', label:{es:'Capacidad del envase (litros)',en:'Container capacity (liters)',pt:'Capacidade da embalagem (litros)'}, type:'number', ph:{es:'ej: 1, 5, 10, 20',en:'e.g. 1, 5, 10, 20',pt:'ex: 1, 5, 10, 20'} },
+      { name:'material', label:{es:'Material',en:'Material',pt:'Material'}, type:'text', ph:{es:'HDPE, PP, virgen o reciclado',en:'HDPE, PP, virgin or recycled',pt:'HDPE, PP, virgem ou reciclado'} },
+      { name:'produccion', label:{es:'Producción requerida (piezas/hora)',en:'Required production (pieces/hr)',pt:'Produção necessária (peças/h)'}, type:'number' },
+      { name:'tiene_molde', label:{es:'¿Cuenta con molde propio?',en:'Do you have your own mold?',pt:'Possui molde próprio?'}, type:'radio', opts:{es:['Sí, ya tengo molde','No, necesito fabricarlo'],en:['Yes, I have a mold','No, I need it made'],pt:['Sim, já tenho molde','Não, preciso fabricar']} }
+    ]
+  },
+
+  'Destalonadora': {
+    title: { es:'Datos técnicos — Destalonadora', en:'Technical data — Tire Debeader', pt:'Dados técnicos — Destalonadora' },
+    fields: [
+      { name:'tipo_llantas', label:{es:'Tipo de llantas',en:'Tire type',pt:'Tipo de pneus'}, type:'select', opts:{es:['Automóvil','Camioneta','Camión','Varios tipos'],en:['Car','Pickup truck','Truck','Various types'],pt:['Automóvel','Caminhonete','Caminhão','Vários tipos']} },
+      { name:'produccion', label:{es:'Producción requerida (llantas/hora)',en:'Required production (tires/hr)',pt:'Produção necessária (pneus/h)'}, type:'number' },
+      { name:'es_linea', label:{es:'¿Equipo individual o parte de una línea?',en:'Individual unit or part of a line?',pt:'Equipamento individual ou parte de uma linha?'}, type:'radio', opts:{es:['Equipo individual','Parte de una línea completa'],en:['Individual unit','Part of a complete line'],pt:['Equipamento individual','Parte de uma linha completa']} }
+    ]
+  },
+
+  'Equipo Auxiliar': {
+    title: { es:'Datos técnicos — Equipo Auxiliar', en:'Technical data — Auxiliary Equipment', pt:'Dados técnicos — Equipamento Auxiliar' },
+    fields: [
+      { name:'equipo_especifico', label:{es:'¿Qué equipo necesita específicamente?',en:'What specific equipment do you need?',pt:'Qual equipamento específico precisa?'}, type:'text', req:true, ph:{es:'ej: banda de selección, silo, centrífuga',en:'e.g. selection belt, silo, centrifuge',pt:'ex: esteira de seleção, silo, centrífuga'} },
+      { name:'aplicacion', label:{es:'Aplicación o proceso',en:'Application or process',pt:'Aplicação ou processo'}, type:'text' },
+      { name:'produccion', label:{es:'Capacidad requerida',en:'Required capacity',pt:'Capacidade necessária'}, type:'text', ph:{es:'kg/hora, m/min, etc.',en:'kg/hr, m/min, etc.',pt:'kg/h, m/min, etc.'} }
+    ]
+  },
+
+  'Líneas Completas': {
+    title: { es:'Datos técnicos — Líneas Completas', en:'Technical data — Complete Lines', pt:'Dados técnicos — Linhas Completas' },
+    fields: [
+      { name:'tipo_linea', label:{es:'Tipo de línea',en:'Line type',pt:'Tipo de linha'}, type:'text', req:true, ph:{es:'ej: llantas, PET, LDPE, triplay, lavado',en:'e.g. tires, PET, LDPE, plywood, washing',pt:'ex: pneus, PET, LDPE, compensado, lavagem'} },
+      { name:'material_entrada', label:{es:'Material de entrada',en:'Input material',pt:'Material de entrada'}, type:'text' },
+      { name:'producto_final', label:{es:'Producto final deseado',en:'Desired final product',pt:'Produto final desejado'}, type:'text' },
+      { name:'capacidad', label:{es:'Capacidad requerida',en:'Required capacity',pt:'Capacidade necessária'}, type:'text', ph:{es:'kg/hora o toneladas/día',en:'kg/hr or tons/day',pt:'kg/h ou toneladas/dia'} },
+      { name:'espacio', label:{es:'Espacio disponible (m²)',en:'Available space (m²)',pt:'Espaço disponível (m²)'}, type:'text' },
+      { name:'inversion', label:{es:'Rango de inversión aproximado',en:'Approximate investment range',pt:'Faixa de investimento aproximada'}, type:'select', opts:{es:['Menos de $500,000 MXN','$500K – $1M MXN','$1M – $3M MXN','$3M – $5M MXN','Más de $5M MXN','Prefiero no decirlo'],en:['Under $25,000 USD','$25K – $50K USD','$50K – $150K USD','$150K – $250K USD','Over $250K USD','Prefer not to say'],pt:['Menos de R$150K','R$150K – R$300K','R$300K – R$900K','R$900K – R$1.5M','Acima de R$1.5M','Prefiro não dizer']} }
+    ]
+  },
+
+  'general': {
+    title: { es:'Datos técnicos — Consulta general', en:'Technical data — General inquiry', pt:'Dados técnicos — Consulta geral' },
+    fields: [
+      { name:'maquina_interes', label:{es:'¿En qué máquina estás interesado?',en:'Which machine are you interested in?',pt:'Em qual máquina você tem interesse?'}, type:'text', req:true },
+      { name:'descripcion', label:{es:'Describe brevemente lo que necesitas',en:'Briefly describe what you need',pt:'Descreva brevemente o que você precisa'}, type:'textarea' }
+    ]
+  }
+
+};
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+var _qmMachine = 'general';
+var _qmFormData = {};
+
+function _lang() {
+  var m = document.body.className.match(/\b(es|en|pt)\b/);
+  return m ? m[1] : 'es';
+}
+
+function _t(obj) {
+  if (!obj) return '';
+  if (typeof obj === 'string') return obj;
+  return obj[_lang()] || obj.es || '';
+}
+
+// ── Open / Close ───────────────────────────────────────────────────────────
+function openWA(machine) {
+  _qmMachine = machine || 'general';
+  var overlay = document.getElementById('quoteModal');
+  var tag = document.getElementById('qmMachineTag');
+  var successEl = document.getElementById('qmSuccess');
+  var formWrap = document.getElementById('qmFormWrap');
+  var form = document.getElementById('qmForm');
+
+  // Reset
+  successEl.style.display = 'none';
+  formWrap.style.display = 'block';
+  form.reset();
+
+  // Set machine tag
+  tag.textContent = machine === 'general' ? 'RecyMach' : machine;
+
+  // Inject machine-specific fields
+  _qmBuildFields(machine);
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  overlay.querySelector('input, select, textarea') && overlay.querySelector('input, select, textarea').focus();
+}
+
+function closeQuote() {
+  document.getElementById('quoteModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('quoteModal').addEventListener('click', function(e) {
+  if (e.target === this) closeQuote();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeQuote();
+});
+
+// ── Build machine-specific fields ─────────────────────────────────────────
+function _qmBuildFields(machine) {
+  var container = document.getElementById('qmMachineFields');
+  var cfg = QM_FIELDS[machine];
+  if (!cfg) { container.innerHTML = ''; return; }
+
+  var lang = _lang();
+  var html = '<div class="qm-section">';
+  html += '<div class="qm-section-title">' + _t(cfg.title) + '</div>';
+
+  cfg.fields.forEach(function(f) {
+    html += '<div class="qm-field">';
+    html += '<label>' + _t(f.label) + (f.req ? '<span class="req">*</span>' : '') + '</label>';
+
+    var ph = f.ph ? (_t(f.ph)) : '';
+
+    if (f.type === 'text' || f.type === 'number' || f.type === 'email' || f.type === 'tel') {
+      html += '<input type="' + f.type + '" name="maq_' + f.name + '" placeholder="' + ph + '"' + (f.req ? ' required' : '') + '>';
+    } else if (f.type === 'textarea') {
+      html += '<textarea name="maq_' + f.name + '" placeholder="' + ph + '"></textarea>';
+    } else if (f.type === 'select') {
+      var opts = f.opts[lang] || f.opts.es;
+      html += '<select name="maq_' + f.name + '"' + (f.req ? ' required' : '') + '>';
+      html += '<option value="">— Selecciona —</option>';
+      opts.forEach(function(o) { html += '<option>' + o + '</option>'; });
+      html += '</select>';
+    } else if (f.type === 'radio') {
+      var ropts = f.opts[lang] || f.opts.es;
+      html += '<div class="qm-options">';
+      ropts.forEach(function(o, i) {
+        html += '<label class="qm-opt"><input type="radio" name="maq_' + f.name + '" value="' + o + '"' + (i===0?' required':'') + '> ' + o + '</label>';
+      });
+      html += '</div>';
+    } else if (f.type === 'checkboxes') {
+      var copts = f.opts[lang] || f.opts.es;
+      html += '<div class="qm-options">';
+      copts.forEach(function(o) {
+        html += '<label class="qm-opt"><input type="checkbox" name="maq_' + f.name + '[]" value="' + o + '"> ' + o + '</label>';
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+// ── Build WhatsApp message ─────────────────────────────────────────────────
+function _qmBuildWA(data) {
+  var lang = _lang();
+  var lines = {
+    es: ['🏭 *COTIZACIÓN RECYMACH*', '─────────────────', '📋 Máquina: *' + _qmMachine + '*'],
+    en: ['🏭 *RECYMACH QUOTE REQUEST*', '─────────────────', '📋 Machine: *' + _qmMachine + '*'],
+    pt: ['🏭 *COTAÇÃO RECYMACH*', '─────────────────', '📋 Máquina: *' + _qmMachine + '*']
+  }[lang] || [];
+
+  var contactKeys = {
+    es: { nombre:'👤 Nombre', empresa:'🏢 Empresa', pais:'🌎 País', ciudad:'📍 Ciudad', telefono:'📱 Teléfono', email:'📧 Correo' },
+    en: { nombre:'👤 Name', empresa:'🏢 Company', pais:'🌎 Country', ciudad:'📍 City', telefono:'📱 Phone', email:'📧 Email' },
+    pt: { nombre:'👤 Nome', empresa:'🏢 Empresa', pais:'🌎 País', ciudad:'📍 Cidade', telefono:'📱 Telefone', email:'📧 E-mail' }
+  }[lang] || {};
+
+  Object.keys(contactKeys).forEach(function(k) {
+    if (data[k]) lines.push(contactKeys[k] + ': ' + data[k]);
+  });
+
+  lines.push('─────────────────');
+  lines.push({ es:'⚙️ *DATOS TÉCNICOS*', en:'⚙️ *TECHNICAL DATA*', pt:'⚙️ *DADOS TÉCNICOS*' }[lang] || '⚙️ *DATOS TÉCNICOS*');
+
+  Object.keys(data).forEach(function(k) {
+    if (k.startsWith('maq_') && data[k]) {
+      var label = k.replace('maq_','').replace(/_/g,' ');
+      lines.push('• ' + label + ': ' + data[k]);
+    }
+  });
+
+  if (data.comentarios) {
+    lines.push('─────────────────');
+    lines.push('💬 ' + data.comentarios);
+  }
+
+  lines.push('─────────────────');
+  lines.push({ es:'Enviado desde recymach.com', en:'Sent from recymach.com', pt:'Enviado de recymach.com' }[lang] || '');
+
+  return lines.join('\n');
+}
+
+// ── Form submit ────────────────────────────────────────────────────────────
+document.getElementById('qmForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('qmSubmitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span>Enviando...</span>';
+
+  var formEl = this;
+  var data = {};
+  var fd = new FormData(formEl);
+  fd.forEach(function(v, k) {
+    if (data[k]) { data[k] += ', ' + v; } else { data[k] = v; }
+  });
+  data._subject = 'Cotización RecyMach: ' + _qmMachine + ' — ' + (data.nombre || '');
+  data._template = 'table';
+  data._captcha = 'false';
+
+  // Save for WA link
+  _qmFormData = data;
+
+  fetch('https://formsubmit.co/ajax/recymach@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(r) { return r.json(); })
+  .then(function() { _qmShowSuccess(data); })
+  .catch(function() {
+    // Even if email fails, show success and offer WA
+    _qmShowSuccess(data);
+  });
+});
+
+function _qmShowSuccess(data) {
+  document.getElementById('qmFormWrap').style.display = 'none';
+  var s = document.getElementById('qmSuccess');
+  s.style.display = 'block';
+
+  var waMsg = _qmBuildWA(data);
+  var waUrl = 'https://wa.me/5215574117293?text=' + encodeURIComponent(waMsg);
+  document.getElementById('qmWaBtn').href = waUrl;
+
+  // Scroll to top of modal
+  document.querySelector('.qm-box').scrollTop = 0;
+}
+</script>
+
 </body>
 </html>
