@@ -192,6 +192,32 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
 .range-stat{flex:1;background:rgba(45,138,78,0.07);border:1px solid rgba(45,138,78,0.18);border-radius:10px;padding:0.65rem 0.5rem;text-align:center;}
 .range-label{font-size:0.67rem;font-weight:700;color:var(--g3);text-transform:uppercase;letter-spacing:0.07em;display:block;margin-bottom:0.25rem;}
 .range-value{font-size:0.95rem;font-weight:900;color:#fff;display:block;line-height:1.2;}
+
+/* DELIVERY NOTE */
+.delivery-note{display:flex;align-items:center;gap:0.75rem;background:rgba(45,138,78,0.07);border:1px solid rgba(45,138,78,0.18);border-radius:12px;padding:0.85rem 1.25rem;margin-bottom:2rem;font-size:0.88rem;color:var(--text2);}
+.delivery-note svg{width:18px;height:18px;color:var(--g3);flex-shrink:0;}
+.delivery-note strong{color:var(--text);}
+
+/* VS COMPARISON TABLE */
+.vs-section{padding:5rem 2rem;background:var(--dark2);border-top:1px solid var(--border);}
+.vs-inner{max-width:1100px;margin:0 auto;}
+.vs-wrapper{overflow-x:auto;margin-top:3rem;border-radius:16px;border:1px solid var(--border);}
+.vs-table{width:100%;border-collapse:collapse;min-width:640px;}
+.vs-table thead th{padding:1.25rem 1rem;font-size:0.85rem;font-weight:800;text-align:center;border-bottom:1px solid var(--border);}
+.vs-table tbody td{padding:0.9rem 1rem;border-top:1px solid rgba(255,255,255,0.05);font-size:0.84rem;text-align:center;vertical-align:middle;line-height:1.5;}
+.vs-table tbody tr:hover td{background:rgba(255,255,255,0.02);}
+.col-crit{text-align:left!important;font-weight:700;color:var(--text2);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;padding-left:1.25rem!important;width:180px;}
+.col-us{background:rgba(26,95,168,0.04);}
+.col-cn{background:rgba(255,60,60,0.03);}
+.col-rm{background:rgba(45,138,78,0.07);border-left:2px solid rgba(45,138,78,0.4);border-right:2px solid rgba(45,138,78,0.4);}
+.head-us{background:rgba(26,95,168,0.08);color:#7eb8ff;}
+.head-cn{background:rgba(255,60,60,0.06);color:#ff8888;}
+.head-rm{background:rgba(45,138,78,0.15);color:#fff;border-left:2px solid rgba(45,138,78,0.5);border-right:2px solid rgba(45,138,78,0.5);}
+.head-rm .best-tag{display:inline-block;background:var(--g);color:#fff;font-size:0.65rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:100px;letter-spacing:0.06em;margin-left:0.5rem;vertical-align:middle;}
+.vs-good{color:#4ade80;font-weight:700;}
+.vs-bad{color:#f87171;}
+.vs-ok{color:#fbbf24;}
+.vs-cta-wrap{text-align:center;margin-top:2.5rem;}
 </style>
 </head>
 <body class="es">
@@ -341,33 +367,52 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
       <button class="cat-tab" data-filter="lineas"><span data-es>Líneas Completas</span><span data-en>Full Lines</span><span data-pt>Linhas Completas</span></button>
     </div>
 
+    <div class="delivery-note">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span><span data-es><strong>Tiempo de entrega:</strong> 30–60 días según tipo de máquina, carga de trabajo y disponibilidad en stock.</span><span data-en><strong>Lead time:</strong> 30–60 days depending on machine type, workload and stock availability.</span><span data-pt><strong>Prazo de entrega:</strong> 30–60 dias conforme tipo de máquina, carga de trabalho e disponibilidade em estoque.</span></span>
+    </div>
     <div class="products-grid" id="productsGrid">
 
       <div class="product-card" data-cat="trituradores">
-        <div class="product-img"><img src="img/triturador_1eje_original.jpg" alt="Triturador RecyMach" loading="lazy"></div>
+        <div class="product-img"><img src="img/img_03.jpg" alt="Triturador 2 Ejes RecyMach triturando llantas" loading="lazy"></div>
         <div class="product-body">
-          <h3><span data-es>Trituradores Industriales</span><span data-en>Industrial Shredders</span><span data-pt>Trituradores Industriais</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">30 – 50 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>400 – 700 kg/h</span><span data-en>400 – 700 kg/h</span><span data-pt>400 – 700 kg/h</span></span></div></div>
+          <h3><span data-es>Trituradores 2 Ejes</span><span data-en>Dual-Shaft Shredders</span><span data-pt>Trituradores 2 Eixos</span></h3>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">30 – 125 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>400 – 3,000 kg/h</span><span data-en>400 – 3,000 kg/h</span><span data-pt>400 – 3.000 kg/h</span></span></div></div>
           <ul class="product-specs">
-<li><span data-es>1 o 2 ejes según la aplicación</span><span data-en>1 or 2 shafts depending on application</span><span data-pt>1 ou 2 eixos conforme a aplicação</span></li>
+<li><span data-es>Llantas, metales ferrosos y no ferrosos</span><span data-en>Tires, ferrous and non-ferrous metals</span><span data-pt>Pneus, metais ferrosos e não ferrosos</span></li>
+<li><span data-es>Dos ejes de corte en contra-rotación</span><span data-en>Two counter-rotating cutting shafts</span><span data-pt>Dois eixos de corte em contra-rotação</span></li>
+<li><span data-es>Inversión automática ante atascos</span><span data-en>Automatic reversal on jams</span><span data-pt>Inversão automática em entupimentos</span></li>
+<li><span data-es>Cuchillas en patrón helicoidal de alta resistencia</span><span data-en>Helical pattern high-strength blades</span><span data-pt>Facas em padrão helicoidal de alta resistência</span></li>
+          </ul>
+          <button class="product-cta" onclick="openModal('Trituradores 2 Ejes')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="trituradores">
+        <div class="product-img"><img src="img/triturador_1eje_original.jpg" alt="Triturador 1 Eje RecyMach" loading="lazy"></div>
+        <div class="product-body">
+          <h3><span data-es>Trituradores 1 Eje</span><span data-en>Single-Shaft Shredders</span><span data-pt>Trituradores 1 Eixo</span></h3>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">20 – 100 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>400 – 3,000 kg/h</span><span data-en>400 – 3,000 kg/h</span><span data-pt>400 – 3.000 kg/h</span></span></div></div>
+          <ul class="product-specs">
 <li><span data-es>Plástico rígido, HDPE, PET, PP, ABS y residuos mixtos</span><span data-en>Rigid plastic, HDPE, PET, PP, ABS and mixed waste</span><span data-pt>Plástico rígido, HDPE, PET, PP, ABS e resíduos mistos</span></li>
-<li><span data-es>Cuchillas intercambiables de acero alta resistencia</span><span data-en>Interchangeable high-strength steel blades</span><span data-pt>Facas intercambiáveis de aço alta resistência</span></li>
+<li><span data-es>Rotor de un eje con cuchillas intercambiables</span><span data-en>Single rotor shaft with interchangeable blades</span><span data-pt>Rotor de um eixo com facas intercambiáveis</span></li>
+<li><span data-es>Pantalla de malla para control de tamaño de partícula</span><span data-en>Mesh screen for particle size control</span><span data-pt>Tela de malha para controle de tamanho de partícula</span></li>
 <li><span data-es>Bajo ruido · diseño compacto · fácil mantenimiento</span><span data-en>Low noise · compact design · easy maintenance</span><span data-pt>Baixo ruído · design compacto · fácil manutenção</span></li>
           </ul>
-          <button class="product-cta" onclick="openModal('Trituradores')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
+          <button class="product-cta" onclick="openModal('Trituradores 1 Eje')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
       </div>
 
       <div class="product-card" data-cat="molinos">
         <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="product-body">
-          <h3><span data-es>Molinos para Plástico</span><span data-en>Plastic Granulators</span><span data-pt>Moinhos para Plástico</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">10 – 50 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>120 – 800 kg/h</span><span data-en>120 – 800 kg/h</span><span data-pt>120 – 800 kg/h</span></span></div></div>
+          <h3><span data-es>Molinos para Plástico</span><span data-en>Plastic Granulators / Mills</span><span data-pt>Moinhos para Plástico</span></h3>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">7.5 – 100 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>50 – 1,500 kg/h</span><span data-en>50 – 1,500 kg/h</span><span data-pt>50 – 1.500 kg/h</span></span></div></div>
           <ul class="product-specs">
-<li><span data-es>Molienda fina y gruesa para reciclaje</span><span data-en>Fine and coarse grinding for recycling</span><span data-pt>Moagem fina e grossa para reciclagem</span></li>
-<li><span data-es>Film, PET, PP, HDPE, ABS y materiales rígidos</span><span data-en>Film, PET, PP, HDPE, ABS and rigid materials</span><span data-pt>Film, PET, PP, HDPE, ABS e materiais rígidos</span></li>
-<li><span data-es>Pantalla de malla intercambiable</span><span data-en>Interchangeable mesh screen</span><span data-pt>Tela de malha intercambiável</span></li>
-<li><span data-es>Rotor con cuchillas fijas y móviles</span><span data-en>Rotor with fixed and mobile blades</span><span data-pt>Rotor com facas fixas e móveis</span></li>
+<li><span data-es>Molienda fina y gruesa para todo tipo de reciclaje</span><span data-en>Fine and coarse grinding for all types of recycling</span><span data-pt>Moagem fina e grossa para todos os tipos de reciclagem</span></li>
+<li><span data-es>Film, PET, PP, HDPE, ABS, acrílico y más</span><span data-en>Film, PET, PP, HDPE, ABS, acrylic and more</span><span data-pt>Film, PET, PP, HDPE, ABS, acrílico e mais</span></li>
+<li><span data-es>Pantalla de malla intercambiable en segundos</span><span data-en>Interchangeable mesh screen in seconds</span><span data-pt>Tela de malha intercambiável em segundos</span></li>
+<li><span data-es>Rotor con cuchillas fijas y móviles de acero especial</span><span data-en>Fixed and mobile special steel blade rotor</span><span data-pt>Rotor com facas fixas e móveis de aço especial</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Molinos')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
@@ -377,12 +422,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="product-body">
           <h3><span data-es>Aglutinadoras</span><span data-en>Agglomerators</span><span data-pt>Aglutinadoras</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">20 – 40 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>70 – 140 kg/h</span><span data-en>70 – 140 kg/h</span><span data-pt>70 – 140 kg/h</span></span></div></div>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">20 – 75 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>50 – 250 kg/h</span><span data-en>50 – 250 kg/h</span><span data-pt>50 – 250 kg/h</span></span></div></div>
           <ul class="product-specs">
 <li><span data-es>Compactación de film y fibras plásticas</span><span data-en>Compaction of plastic film and fibers</span><span data-pt>Compactação de filme e fibras plásticas</span></li>
-<li><span data-es>Mayor densidad para almacén y transporte</span><span data-en>Higher density for storage and transport</span><span data-pt>Maior densidade para armazenagem e transporte</span></li>
+<li><span data-es>Mayor densidad para almacén y transporte eficiente</span><span data-en>Higher density for efficient storage and transport</span><span data-pt>Maior densidade para armazenagem e transporte eficiente</span></li>
 <li><span data-es>Descarga automática por temporizador</span><span data-en>Automatic discharge by timer</span><span data-pt>Descarga automática por temporizador</span></li>
-<li><span data-es>Compatible con LDPE, LLDPE, PP film</span><span data-en>Compatible with LDPE, LLDPE, PP film</span><span data-pt>Compatível com LDPE, LLDPE, PP film</span></li>
+<li><span data-es>Compatible con LDPE, LLDPE, PP film y similares</span><span data-en>Compatible with LDPE, LLDPE, PP film and similar</span><span data-pt>Compatível com LDPE, LLDPE, PP film e similares</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Aglutinadoras')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
@@ -392,12 +437,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="product-body">
           <h3><span data-es>Peletizadoras</span><span data-en>Pelletizers</span><span data-pt>Peletizadoras</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">20 – 50 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>60 – 380 kg/h</span><span data-en>60 – 380 kg/h</span><span data-pt>60 – 380 kg/h</span></span></div></div>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">10 – 175 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>40 – 400 kg/h</span><span data-en>40 – 400 kg/h</span><span data-pt>40 – 400 kg/h</span></span></div></div>
           <ul class="product-specs">
-<li><span data-es>Granza uniforme lista para inyección o extrusión</span><span data-en>Uniform pellets ready for injection or extrusion</span><span data-pt>Grânulos uniformes prontos para injeção ou extrusão</span></li>
-<li><span data-es>Con o sin sistema de cascada de agua</span><span data-en>With or without water cascade system</span><span data-pt>Com ou sem sistema de cascata de água</span></li>
-<li><span data-es>Corte en frío o directamente en cabeza</span><span data-en>Cold cut or direct head cut</span><span data-pt>Corte a frio ou direto na cabeça</span></li>
-<li><span data-es>HDPE, PP, PET, LDPE y mezclas</span><span data-en>HDPE, PP, PET, LDPE and blends</span><span data-pt>HDPE, PP, PET, LDPE e misturas</span></li>
+<li><span data-es>Pellet uniforme listo para inyección o extrusión</span><span data-en>Uniform pellet ready for injection or extrusion</span><span data-pt>Pellet uniforme pronto para injeção ou extrusão</span></li>
+<li><span data-es>Línea normal o con cascada de agua para mayor limpieza</span><span data-en>Standard line or water cascade for higher purity</span><span data-pt>Linha padrão ou cascata d’água para maior limpeza</span></li>
+<li><span data-es>Salida tipo espagueti o corte a la cabeza</span><span data-en>Spaghetti die or head-cut output type</span><span data-pt>Saída tipo espaguete ou corte na cabeça</span></li>
+<li><span data-es>HDPE, PP, PET, LDPE, ABS y mezclas</span><span data-en>HDPE, PP, PET, LDPE, ABS and blends</span><span data-pt>HDPE, PP, PET, LDPE, ABS e misturas</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Peletizadoras')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
@@ -407,12 +452,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="product-body">
           <h3><span data-es>Extrusoras</span><span data-en>Extruders</span><span data-pt>Extrusoras</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">15 – 20 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>4 tipos de producto</span><span data-en>4 product types</span><span data-pt>4 tipos de produto</span></span></div></div>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">10 – 100 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>Múltiples productos</span><span data-en>Multiple products</span><span data-pt>Múltiplos produtos</span></span></div></div>
           <ul class="product-specs">
-<li><span data-es>Bolsa plástica, madera plástica, perfil y poliducto</span><span data-en>Plastic bag, plastic wood, profile and polyduct</span><span data-pt>Saco plástico, madeira plástica, perfil e poliedro</span></li>
+<li><span data-es>Bolsa plástica, envases, jarciería, madera plástica, perfil, poliducto y más</span><span data-en>Plastic bags, containers, household goods, plastic wood, profiles, polyduct and more</span><span data-pt>Sacolas, embalagens, produtos domésticos, madeira plástica, perfil, poliedro e mais</span></li>
 <li><span data-es>Tornillo bimétalico de alta durabilidad</span><span data-en>High-durability bimetallic screw</span><span data-pt>Parafuso bimétalico de alta durabilidade</span></li>
 <li><span data-es>Control de temperatura por zonas independientes</span><span data-en>Temperature control by independent zones</span><span data-pt>Controle de temperatura por zonas independentes</span></li>
-<li><span data-es>Adaptable a diferentes moldes y dados</span><span data-en>Adaptable to different molds and dies</span><span data-pt>Adaptável a diferentes moldes e matrizes</span></li>
+<li><span data-es>Adaptable a diferentes moldes, dados y boquillas</span><span data-en>Adaptable to different molds, dies and nozzles</span><span data-pt>Adaptável a diferentes moldes, matrizes e bocais</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Extrusoras')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
@@ -422,11 +467,11 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="product-body">
           <h3><span data-es>Prensas Hidráulicas</span><span data-en>Hydraulic Presses</span><span data-pt>Prensas Hidráulicas</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">7.5 – 20 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>100 – 750 kg/paca</span><span data-en>100 – 750 kg/bale</span><span data-pt>100 – 750 kg/fardo</span></span></div></div>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">5 – 75 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>50 – 750 kg/paca</span><span data-en>50 – 750 kg/bale</span><span data-pt>50 – 750 kg/fardo</span></span></div></div>
           <ul class="product-specs">
 <li><span data-es>Modelos vertical y horizontal disponibles</span><span data-en>Vertical and horizontal models available</span><span data-pt>Modelos vertical e horizontal disponíveis</span></li>
 <li><span data-es>Fuerza de 30 hasta 150 toneladas personalizable</span><span data-en>Force from 30 to 150 customizable tons</span><span data-pt>Força de 30 a 150 toneladas personalizável</span></li>
-<li><span data-es>Compacta plástico, cartón, metal y residuos</span><span data-en>Compacts plastic, cardboard, metal and waste</span><span data-pt>Compacta plástico, papelão, metal e resíduos</span></li>
+<li><span data-es>Compacta plástico, cartón, metal y residuos sólidos</span><span data-en>Compacts plastic, cardboard, metal and solid waste</span><span data-pt>Compacta plástico, papelão, metal e resíduos sólidos</span></li>
 <li><span data-es>Sistema hidráulico de alta presión y bajo mantenimiento</span><span data-en>High-pressure hydraulic system, low maintenance</span><span data-pt>Sistema hidráulico de alta pressão e baixa manutenção</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Prensas')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
@@ -437,12 +482,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="product-body">
           <h3><span data-es>Sopladoras de Envases</span><span data-en>Blow Molding Machines</span><span data-pt>Sopradoras de Embalagens</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">5 – 7.5 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>Hasta 6 litros</span><span data-en>Up to 6 liters</span><span data-pt>Até 6 litros</span></span></div></div>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">5 – 40 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>1 – 20 litros</span><span data-en>1 – 20 liters</span><span data-pt>1 – 20 litros</span></span></div></div>
           <ul class="product-specs">
 <li><span data-es>Fabricación de envases HDPE y PP virgen o reciclado</span><span data-en>HDPE and PP container manufacturing, virgin or recycled</span><span data-pt>Fabricação de embalagens HDPE e PP virgem ou reciclado</span></li>
 <li><span data-es>Cabezal simple y doble cabezal disponibles</span><span data-en>Single and double head available</span><span data-pt>Cabeça simples e dupla cabeça disponíveis</span></li>
-<li><span data-es>Moldes intercambiables para distintos formatos</span><span data-en>Interchangeable molds for different formats</span><span data-pt>Moldes intercambiáveis para diferentes formatos</span></li>
-<li><span data-es>Produce hasta 6 piezas por minuto</span><span data-en>Produces up to 6 pieces per minute</span><span data-pt>Produz até 6 peças por minuto</span></li>
+<li><span data-es>Moldes intercambiables de 1 hasta 20 litros</span><span data-en>Interchangeable molds from 1 to 20 liters</span><span data-pt>Moldes intercambiáveis de 1 a 20 litros</span></li>
+<li><span data-es>Produce hasta 6 piezas por minuto según modelo</span><span data-en>Produces up to 6 pieces per minute per model</span><span data-pt>Produz até 6 peças por minuto conforme modelo</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Sopladoras')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
@@ -452,12 +497,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="product-body">
           <h3><span data-es>Equipo Auxiliar</span><span data-en>Auxiliary Equipment</span><span data-pt>Equipamento Auxiliar</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">1 – 50 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>7 equipos</span><span data-en>7 units</span><span data-pt>7 unidades</span></span></div></div>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">1 – 50 HP</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>9+ equipos</span><span data-en>9+ units</span><span data-pt>9+ unidades</span></span></div></div>
           <ul class="product-specs">
-<li><span data-es>Destalonadora y Desetiquetadora para prelavado</span><span data-en>Debander and delabeler for pre-washing</span><span data-pt>Deslonchadeira e desrotuladora para pré-lavagem</span></li>
+<li><span data-es>Destalonadora y Desetiquetadora para prelavado de material</span><span data-en>Debander and delabeler for pre-washing material</span><span data-pt>Deslonchadeira e desrotuladora para pré-lavagem</span></li>
 <li><span data-es>Bandas de selección y alimentación a medida</span><span data-en>Selection and feeding conveyors to order</span><span data-pt>Esteiras de seleção e alimentação sob medida</span></li>
 <li><span data-es>Centrífuga, Ponchadora y Afiladora de Cuchillas</span><span data-en>Centrifuge, Perforator and Blade Sharpener</span><span data-pt>Centrífuga, Perfuradora e Afiadora de Facas</span></li>
-<li><span data-es>Complementan cualquier línea de reciclaje</span><span data-en>Complement any recycling line</span><span data-pt>Complementam qualquer linha de reciclagem</span></li>
+<li><span data-es>Extractores neumáticos y Silos de almacenaje</span><span data-en>Pneumatic extractors and storage silos</span><span data-pt>Extratores pneumáticos e silos de armazenagem</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Equipo Auxiliar')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
@@ -467,17 +512,95 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         <div class="product-img-ph"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="product-body">
           <h3><span data-es>Líneas Completas</span><span data-en>Complete Recycling Lines</span><span data-pt>Linhas Completas de Reciclagem</span></h3>
-          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">Llave en mano</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>5 soluciones</span><span data-en>5 solutions</span><span data-pt>5 soluções</span></span></div></div>
+          <div class="range-bar"><div class="range-stat"><span class="range-label"><span data-es>Potencia</span><span data-en>Power</span><span data-pt>Potência</span></span><span class="range-value">Llave en mano</span></div><div class="range-stat"><span class="range-label"><span data-es>Capacidad</span><span data-en>Capacity</span><span data-pt>Capacidade</span></span><span class="range-value"><span data-es>5+ soluciones</span><span data-en>5+ solutions</span><span data-pt>5+ soluções</span></span></div></div>
           <ul class="product-specs">
-<li><span data-es>Triplay plástico, Lavado, Llantas y RSU</span><span data-en>Plastic plywood, Washing, Tires and MSW</span><span data-pt>Compensado plástico, Lavagem, Pneus e RSU</span></li>
-<li><span data-es>Diseño integral desde triturado hasta granza</span><span data-en>Integral design from shredding to pellet</span><span data-pt>Design integral da trituração até grânulo</span></li>
-<li><span data-es>Capacidad e ingeniería según requerimiento</span><span data-en>Capacity and engineering per requirement</span><span data-pt>Capacidade e engenharia conforme necessidade</span></li>
+<li><span data-es>Triplay plástico, Lavado, Llantas, RSU y más</span><span data-en>Plastic plywood, Washing, Tires, MSW and more</span><span data-pt>Compensado plástico, Lavagem, Pneus, RSU e mais</span></li>
+<li><span data-es>Todo el proceso: triturado → molido → lavado → pellet listo</span><span data-en>Full process: shredding → grinding → washing → finished pellet</span><span data-pt>Processo completo: trituração → moagem → lavagem → pellet pronto</span></li>
+<li><span data-es>Capacidad e ingeniería diseñados según tu requerimiento</span><span data-en>Capacity and engineering designed to your requirement</span><span data-pt>Capacidade e engenharia projetadas conforme sua necessidade</span></li>
 <li><span data-es>Capacitación, puesta en marcha y soporte incluidos</span><span data-en>Training, commissioning and support included</span><span data-pt>Treinamento, comissionamento e suporte incluídos</span></li>
           </ul>
           <button class="product-cta" onclick="openModal('Líneas Completas')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg><span data-es>Cotizar Esta Máquina</span><span data-en>Quote This Machine</span><span data-pt>Cotar Esta Máquina</span></button>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="vs-section">
+  <div class="vs-inner">
+    <div class="section-header">
+      <h2><span data-es>RecyMach vs Competencia Global</span><span data-en>RecyMach vs Global Competition</span><span data-pt>RecyMach vs Concorrência Global</span></h2>
+      <p><span data-es>Compara antes de invertir — los números hablan por sí solos.</span><span data-en>Compare before investing — the numbers speak for themselves.</span><span data-pt>Compare antes de investir — os números falam por si só.</span></p>
+    </div>
+    <div class="vs-wrapper">
+      <table class="vs-table">
+        <thead>
+          <tr>
+            <th class="col-crit"></th>
+            <th class="head-us">🇺🇸 EUA / USA</th>
+            <th class="head-cn">🇨🇳 China</th>
+            <th class="head-rm">🇲🇽 RecyMach <span class="best-tag"><span data-es>MEJOR OPCIÓN</span><span data-en>BEST CHOICE</span><span data-pt>MELHOR OPÇÃO</span></span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-crit"><span data-es>💰 Precio relativo</span><span data-en>💰 Relative price</span><span data-pt>💰 Preço relativo</span></td>
+            <td class="col-us vs-bad"><span data-es>$$$$$ Muy alto</span><span data-en>$$$$$ Very high</span><span data-pt>$$$$$ Muito alto</span></td>
+            <td class="col-cn vs-ok"><span data-es>$$ Bajo — calidad variable</span><span data-en>$$ Low — variable quality</span><span data-pt>$$ Baixo — qualidade variável</span></td>
+            <td class="col-rm vs-good"><span data-es>✔ $$$ Precio justo y competitivo</span><span data-en>✔ $$$ Fair and competitive price</span><span data-pt>✔ $$$ Preço justo e competitivo</span></td>
+          </tr>
+          <tr>
+            <td class="col-crit"><span data-es>🏷️ Arancel a EUA</span><span data-en>🏷️ US Import Tariff</span><span data-pt>🏷️ Tarifa EUA</span></td>
+            <td class="col-us vs-ok">0%</td>
+            <td class="col-cn vs-bad"><span data-es>⚠️ 145% + flete marítimo</span><span data-en>⚠️ 145% + ocean freight</span><span data-pt>⚠️ 145% + frete marítimo</span></td>
+            <td class="col-rm vs-good"><span data-es>✔ 0% T-MEC/USMCA</span><span data-en>✔ 0% USMCA/T-MEC</span><span data-pt>✔ 0% USMCA/T-MEC</span></td>
+          </tr>
+          <tr>
+            <td class="col-crit"><span data-es>⏱ Tiempo de entrega</span><span data-en>⏱ Lead time</span><span data-pt>⏱ Prazo de entrega</span></td>
+            <td class="col-us vs-bad"><span data-es>6 – 12 meses</span><span data-en>6 – 12 months</span><span data-pt>6 – 12 meses</span></td>
+            <td class="col-cn vs-bad"><span data-es>3 – 6 meses + 45 días de flete</span><span data-en>3 – 6 months + 45 days freight</span><span data-pt>3 – 6 meses + 45 dias de frete</span></td>
+            <td class="col-rm vs-good"><span data-es>✔ 30 – 60 días</span><span data-en>✔ 30 – 60 days</span><span data-pt>✔ 30 – 60 dias</span></td>
+          </tr>
+          <tr>
+            <td class="col-crit"><span data-es>🔧 Personalización</span><span data-en>🔧 Customization</span><span data-pt>🔧 Personalização</span></td>
+            <td class="col-us vs-ok"><span data-es>Limitada</span><span data-en>Limited</span><span data-pt>Limitada</span></td>
+            <td class="col-cn vs-bad"><span data-es>Estándar / catálogo fijo</span><span data-en>Standard / fixed catalog</span><span data-pt>Padrão / catálogo fixo</span></td>
+            <td class="col-rm vs-good"><span data-es>✔ 100% a tu medida</span><span data-en>✔ 100% built to spec</span><span data-pt>✔ 100% sob medida</span></td>
+          </tr>
+          <tr>
+            <td class="col-crit"><span data-es>📞 Soporte técnico</span><span data-en>📞 Tech support</span><span data-pt>📞 Suporte técnico</span></td>
+            <td class="col-us vs-ok"><span data-es>Solo inglés</span><span data-en>English only</span><span data-pt>Apenas inglês</span></td>
+            <td class="col-cn vs-bad"><span data-es>Chino / básico por intermediario</span><span data-en>Chinese / basic via intermediary</span><span data-pt>Chinês / básico por intermediário</span></td>
+            <td class="col-rm vs-good"><span data-es>✔ Español · Inglés · Portugués</span><span data-en>✔ Spanish · English · Portuguese</span><span data-pt>✔ Espanhol · Inglês · Português</span></td>
+          </tr>
+          <tr>
+            <td class="col-crit"><span data-es>🎓 Ingeniería</span><span data-en>🎓 Engineering</span><span data-pt>🎓 Engenharia</span></td>
+            <td class="col-us vs-ok"><span data-es>Sí, pero muy costosa</span><span data-en>Yes, but very costly</span><span data-pt>Sim, mas muito custosa</span></td>
+            <td class="col-cn vs-bad"><span data-es>Mínima o ninguna</span><span data-en>Minimal or none</span><span data-pt>Mínima ou nenhuma</span></td>
+            <td class="col-rm vs-good"><span data-es>✔ Ingenieros del IPN incluido</span><span data-en>✔ IPN engineers included</span><span data-pt>✔ Engenheiros do IPN incluídos</span></td>
+          </tr>
+          <tr>
+            <td class="col-crit"><span data-es>🔩 Refacciones</span><span data-en>🔩 Spare parts</span><span data-pt>🔩 Peças de reposição</span></td>
+            <td class="col-us vs-bad"><span data-es>Costosas e importadas</span><span data-en>Costly and imported</span><span data-pt>Caras e importadas</span></td>
+            <td class="col-cn vs-bad"><span data-es>Difíciles de conseguir</span><span data-en>Hard to source</span><span data-pt>Difíceis de obter</span></td>
+            <td class="col-rm vs-good"><span data-es>✔ Locales, rápidas y económicas</span><span data-en>✔ Local, fast and economical</span><span data-pt>✔ Locais, rápidas e econômicas</span></td>
+          </tr>
+          <tr>
+            <td class="col-crit"><span data-es>🏭 Fabricación</span><span data-en>🏭 Manufacturing</span><span data-pt>🏭 Fabricação</span></td>
+            <td class="col-us vs-ok"><span data-es>En serie / semi-personalizada</span><span data-en>Series / semi-custom</span><span data-pt>Em série / semi-personalizada</span></td>
+            <td class="col-cn vs-bad"><span data-es>Masiva, sin control de calidad</span><span data-en>Mass-produced, no quality control</span><span data-pt>Massiva, sem controle de qualidade</span></td>
+            <td class="col-rm vs-good"><span data-es>✔ Bajo pedido · cada pieza supervisada</span><span data-en>✔ Made to order · every piece supervised</span><span data-pt>✔ Sob encomenda · cada peça supervisionada</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="vs-cta-wrap">
+      <a href="#quoteModal" onclick="openModal('Consulta General')" class="product-cta" style="display:inline-flex;text-decoration:none;padding:0.9rem 2rem;font-size:1rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg>
+        <span data-es>Cotiza con RecyMach hoy</span><span data-en>Get a RecyMach quote today</span><span data-pt>Solicite uma cotação RecyMach hoje</span>
+      </a>
     </div>
   </div>
 </section>
