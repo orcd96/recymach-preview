@@ -194,6 +194,19 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
 @media(max-width:900px){.why-grid{grid-template-columns:1fr;}.trust-inner{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:700px){.machines-grid{grid-template-columns:1fr 1fr;}.secondary-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.trust-inner{grid-template-columns:repeat(2,1fr) !important;}}
 @media(max-width:500px){nav{padding:0 1rem;}.machines-grid{grid-template-columns:1fr;}.hero-actions{flex-direction:column;align-items:center;}.cta-btns{flex-direction:column;align-items:center;}.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}}
+
+/* WHY RECYMACH */
+.why-section{padding:5rem 2rem;background:var(--dark2);}
+.why-inner{max-width:1200px;margin:0 auto;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:2.5rem;}
+.why-img img{width:100%;border-radius:16px;object-fit:cover;height:420px;}
+.why-points{display:flex;flex-direction:column;gap:1.5rem;}
+.why-point{display:flex;gap:1.25rem;align-items:flex-start;}
+.why-icon{width:48px;height:48px;background:rgba(45,138,78,0.1);border:1px solid rgba(45,138,78,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.why-icon svg{width:22px;height:22px;color:var(--g3);}
+.why-point h4{font-size:1rem;font-weight:700;margin-bottom:0.3rem;}
+.why-point p{font-size:0.9rem;color:var(--text2);line-height:1.6;}
+@media(max-width:800px){.why-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body class="es">
@@ -449,67 +462,47 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
 
 <!-- WHY RECYMACH -->
 <section class="why-section">
-  <div class="section-header">
-    <span class="eyebrow" data-es>Por qué RecyMach</span>
-    <span class="eyebrow" data-en>Why RecyMach</span>
-    <span class="eyebrow" data-pt>Por que RecyMach</span>
-    <h2>
-      <span data-es>Lo que un comprador experimentado valora</span>
-      <span data-en>What an experienced buyer values</span>
-      <span data-pt>O que um comprador experiente valoriza</span>
-    </h2>
-  </div>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-      <div>
-        <h3 data-es>Fabricante directo — no revendedor</h3>
-        <h3 data-en>Direct manufacturer — not a reseller</h3>
-        <h3 data-pt>Fabricante direto — não revendedor</h3>
-        <p>
-          <span data-es>Hablas con el ingeniero que diseña y fabrica tu máquina. El precio es de fabricante, no de distribuidor. Sin márgenes escondidos ni intermediarios que no agregan valor.</span>
-          <span data-en>You talk to the engineer who designs and builds your machine. The price is manufacturer price, not distributor. No hidden margins or middlemen who add no value.</span>
-          <span data-pt>Você fala com o engenheiro que projeta e fabrica sua máquina. O preço é de fabricante, não de distribuidor. Sem margens ocultas ou intermediários que não agregam valor.</span>
-        </p>
-      </div>
+  <div class="why-inner">
+    <div class="section-header">
+      <h2>
+        <span data-es>¿Por Qué RecyMach?</span>
+        <span data-en>Why RecyMach?</span>
+        <span data-pt>Por Que RecyMach?</span>
+      </h2>
     </div>
-    <div class="why-card">
-      <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <div>
-        <h3 data-es>A tu capacidad exacta</h3>
-        <h3 data-en>Your exact capacity</h3>
-        <h3 data-pt>Sua capacidade exata</h3>
-        <p>
-          <span data-es>No te vendemos lo que tenemos en bodega. Definimos juntos la capacidad por hora, el material, el voltaje de tu región y las dimensiones. La máquina se adapta a ti, no al revés.</span>
-          <span data-en>We don't sell you what's in stock. We define together the hourly capacity, material, your region's voltage, and dimensions. The machine adapts to you, not the other way around.</span>
-          <span data-pt>Não vendemos o que está no estoque. Definimos juntos a capacidade por hora, o material, a tensão da sua região e as dimensões. A máquina se adapta a você, não o contrário.</span>
-        </p>
+    <div class="why-grid">
+      <div class="why-img">
+        <img src="img/img_08.webp" alt="RecyMach fabricación">
       </div>
-    </div>
-    <div class="why-card">
-      <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-      <div>
-        <h3 data-es>0% arancel USA — ventaja real T-MEC</h3>
-        <h3 data-en>0% USA tariff — real USMCA advantage</h3>
-        <h3 data-pt>0% tarifa EUA — vantagem real USMCA</h3>
-        <p>
-          <span data-es>Maquinaria china paga hasta 145% de arancel para entrar a USA. La nuestra entra con 0% bajo T-MEC. Si compras para operar en EUA, RecyMach es la opción más inteligente del mercado.</span>
-          <span data-en>Chinese machinery pays up to 145% tariff to enter the USA. Ours enters at 0% under USMCA. If you're buying to operate in the US, RecyMach is the smartest option in the market.</span>
-          <span data-pt>Maquinário chinês paga até 145% de tarifa para entrar nos EUA. O nosso entra com 0% pelo USMCA. Se você compra para operar nos EUA, RecyMach é a opção mais inteligente do mercado.</span>
-        </p>
-      </div>
-    </div>
-    <div class="why-card">
-      <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="13" rx="2"/><circle cx="12" cy="16" r="1"/></svg></div>
-      <div>
-        <h3 data-es>Soporte técnico real — no un call center</h3>
-        <h3 data-en>Real technical support — not a call center</h3>
-        <h3 data-pt>Suporte técnico real — não um call center</h3>
-        <p>
-          <span data-es>Cuando tienes un problema operativo, hablas directamente con el ingeniero que fabricó tu máquina. Conoce cada tornillo. La respuesta es técnica, no un script.</span>
-          <span data-en>When you have an operational problem, you speak directly to the engineer who built your machine. They know every bolt. The answer is technical, not a script.</span>
-          <span data-pt>Quando você tem um problema operacional, fala diretamente com o engenheiro que fabricou sua máquina. Ele conhece cada parafuso. A resposta é técnica, não um script.</span>
-        </p>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div>
+            <h4 data-es>Ingenieros del IPN</h4><h4 data-en>IPN Engineers</h4><h4 data-pt>Engenheiros do IPN</h4>
+            <p><span data-es>Nuestro equipo de ingenieros egresados del Instituto Politécnico Nacional diseña cada máquina con criterio de ingeniería industrial.</span><span data-en>Our team of engineers from the National Polytechnic Institute design each machine with industrial engineering criteria.</span><span data-pt>Nossa equipe de engenheiros do Instituto Politécnico Nacional projeta cada máquina com critério de engenharia industrial.</span></p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div>
+            <h4 data-es>30+ Años de Respaldo</h4><h4 data-en>30+ Years of Backing</h4><h4 data-pt>30+ Anos de Respaldo</h4>
+            <p><span data-es>Más de 30 años de experiencia operativa real en la industria del reciclaje en México respaldan cada máquina que fabricamos.</span><span data-en>Over 30 years of real operational experience in the recycling industry back every machine we manufacture.</span><span data-pt>Mais de 30 anos de experiência operacional real na indústria de reciclagem no México respaldam cada máquina que fabricamos.</span></p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="13" rx="2"/><circle cx="12" cy="16" r="1"/></svg></div>
+          <div>
+            <h4 data-es>Sin Intermediarios</h4><h4 data-en>No Middlemen</h4><h4 data-pt>Sem Intermediários</h4>
+            <p><span data-es>Fabricante directo. Tratas con el ingeniero que diseñó tu máquina. Precios justos sin márgenes de distribuidor.</span><span data-en>Direct manufacturer. You deal with the engineer who designed your machine. Fair prices without distributor margins.</span><span data-pt>Fabricante direto. Você trata com o engenheiro que projetou sua máquina. Preços justos sem margens de distribuidor.</span></p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <div>
+            <h4 data-es>Hecho a Tu Medida</h4><h4 data-en>Made to Your Specs</h4><h4 data-pt>Feito à Sua Medida</h4>
+            <p><span data-es>No tenemos catálogo fijo. Definimos juntos la capacidad, el material a procesar y las especificaciones eléctricas para tu región.</span><span data-en>No fixed catalog. We define together the capacity, material to process, and electrical specs for your region.</span><span data-pt>Sem catálogo fixo. Definimos juntos a capacidade, o material a processar e as especificações elétricas para sua região.</span></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
