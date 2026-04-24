@@ -111,11 +111,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#ffffff;border-b
 .why-card p{font-size:0.9rem;color:var(--text2);line-height:1.65;}
 
 /* USA STRIP */
-.usa-strip{background:linear-gradient(90deg,#091a10,#0f2d1a,#091a10);border-top:1px solid rgba(45,138,78,0.2);border-bottom:1px solid rgba(45,138,78,0.2);padding:1.5rem 2rem;text-align:center;}
-.usa-strip-inner{max-width:900px;margin:0 auto;}
-.usa-strip h3{font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:800;color:var(--g3);margin-bottom:0.5rem;}
-.usa-strip p{font-size:0.95rem;color:var(--text2);}
-.usa-strip strong{color:#fff;}
+.usa-section{background:linear-gradient(135deg,#060f09,#0b1f12,#060f09);border-top:1px solid rgba(45,138,78,0.25);border-bottom:1px solid rgba(45,138,78,0.25);padding:4rem 2rem;text-align:center;}
+.usa-inner{max-width:860px;margin:0 auto;}
+.usa-section .eyebrow{color:var(--g3);font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;display:block;}
+.usa-section h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;margin-bottom:0.8rem;}
+.usa-section h2 span.flag-usa{color:var(--g3);}
+.usa-section>div>p{font-size:0.95rem;color:var(--text2);max-width:640px;margin:0 auto 2rem;}
+.usa-compare{display:flex;gap:1.5rem;justify-content:center;margin:0 0 1.5rem;flex-wrap:wrap;}
+.compare-card{background:var(--dark2);border-radius:14px;padding:1.8rem 2.5rem;text-align:center;min-width:200px;}
+.compare-card.them{border:2px solid rgba(255,60,60,0.35);}
+.compare-card.us{border:2px solid rgba(45,138,78,0.5);background:rgba(45,138,78,0.07);}
+.compare-label{font-size:1rem;font-weight:700;margin-bottom:0.4rem;color:var(--text);}
+.compare-rate{font-size:3rem;font-weight:900;line-height:1;margin:0.4rem 0;}
+.compare-card.them .compare-rate{color:#ff4444;}
+.compare-card.us .compare-rate{color:var(--g3);}
+.compare-sub{font-size:0.82rem;color:var(--text2);}
+.compare-vs{display:flex;align-items:center;font-size:1.4rem;font-weight:900;color:var(--text2);}
+.usa-disclaimer{font-size:0.78rem;color:var(--text2);opacity:0.7;}
+@media(max-width:600px){.usa-compare{flex-direction:column;align-items:center;}}
 
 /* SECONDARY (Invertir / Mi Negocio) */
 .secondary-section{padding:4rem 2rem;background:var(--dark);}
@@ -156,7 +169,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#ffffff;border-b
 footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;}
 .footer-inner{max-width:1200px;margin:0 auto;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
-.footer-brand .footer-logo img{height:52px;margin-bottom:1rem;}
+.footer-brand .footer-logo{display:inline-block;background:#ffffff;padding:6px 12px;border-radius:10px;margin-bottom:1rem;}
+.footer-brand .footer-logo img{height:52px;display:block;}
 .footer-brand p{color:var(--text2);font-size:0.88rem;line-height:1.7;max-width:260px;}
 .footer-col h4{font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);margin-bottom:1rem;}
 .footer-col a{display:block;color:var(--text2);text-decoration:none;font-size:0.88rem;margin-bottom:0.5rem;transition:color 0.2s;}
@@ -502,20 +516,39 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
 </section>
 
 <!-- USA STRIP -->
-<div class="usa-strip">
-  <div class="usa-strip-inner">
-    <h3>
-      <span data-es>🇲🇽 → 🇺🇸 &nbsp;0% arancel de importación bajo T-MEC/USMCA</span>
-      <span data-en>🇲🇽 → 🇺🇸 &nbsp;0% import tariff under USMCA</span>
-      <span data-pt>🇲🇽 → 🇺🇸 &nbsp;0% tarifa de importação pelo USMCA</span>
-    </h3>
+<section class="usa-section">
+  <div class="usa-inner">
+    <span class="eyebrow"><span data-es>Ventaja T-MEC / USMCA</span><span data-en>USMCA / T-MEC Advantage</span><span data-pt>Vantagem USMCA / T-MEC</span></span>
+    <h2>
+      <span data-es>🇺🇸 Compradores en USA: <span class="flag-usa">0% Arancel</span> con RecyMach</span>
+      <span data-en>🇺🇸 USA Buyers: <span class="flag-usa">0% Tariff</span> with RecyMach</span>
+      <span data-pt>🇺🇸 Compradores nos EUA: <span class="flag-usa">0% de Tarifa</span> com RecyMach</span>
+    </h2>
     <p>
-      <span data-es>Mientras la competencia china paga <strong>145% de arancel</strong> para entrar a EUA, RecyMach entra libre. Ahorra en logística y en impuestos al mismo tiempo.</span>
-      <span data-en>While Chinese competition pays <strong>145% tariff</strong> to enter the US, RecyMach enters free. Save on logistics and taxes at the same time.</span>
-      <span data-pt>Enquanto a concorrência chinesa paga <strong>145% de tarifa</strong> para entrar nos EUA, RecyMach entra livre. Economize em logística e impostos ao mesmo tempo.</span>
+      <span data-es>Bajo el T-MEC/USMCA, la maquinaria fabricada en México entra a Estados Unidos libre de aranceles. Nuestros competidores chinos pagan 145% — eso se traduce directamente en precio y plazo de entrega.</span>
+      <span data-en>Under USMCA/T-MEC, machinery manufactured in Mexico enters the United States tariff-free. Our Chinese competitors pay 145% — that translates directly into price and lead time.</span>
+      <span data-pt>Sob o USMCA/T-MEC, o maquinário fabricado no México entra nos EUA livre de tarifas. Nossos concorrentes chineses pagam 145% — isso se traduz em preço e prazo.</span>
+    </p>
+    <div class="usa-compare">
+      <div class="compare-card them">
+        <div class="compare-label">🇨🇳 <span data-es>China</span><span data-en>China</span><span data-pt>China</span></div>
+        <div class="compare-rate">145%</div>
+        <div class="compare-sub"><span data-es>Arancel de importación a USA</span><span data-en>Import tariff to USA</span><span data-pt>Tarifa de importação EUA</span></div>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-card us">
+        <div class="compare-label">🇲🇽 RecyMach</div>
+        <div class="compare-rate">0%</div>
+        <div class="compare-sub">T-MEC / USMCA</div>
+      </div>
+    </div>
+    <p class="usa-disclaimer">
+      <span data-es>*Aranceles aproximados sujetos a cambios de política comercial. Consulte con un agente aduanal.</span>
+      <span data-en>*Approximate tariffs subject to trade policy changes. Consult a customs broker.</span>
+      <span data-pt>*Tarifas aproximadas sujeitas a mudanças de política comercial. Consulte um despachante.</span>
     </p>
   </div>
-</div>
+</section>
 
 <!-- SECONDARY: Invertir / Mi Negocio -->
 <section class="secondary-section">
@@ -637,7 +670,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:3.5rem 
         <h4 data-pt>Mercados</h4>
         <a href="#">México</a>
         <a href="#">USA (USMCA 0%)</a>
-        <a href="#">Texas · California · Florida</a>
         <a href="#">LATAM</a>
         <a href="#">Brasil</a>
       </div>
